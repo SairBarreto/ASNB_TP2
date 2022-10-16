@@ -3,6 +3,8 @@
 
 using namespace std;
 
+int procesar_opcion();
+
 int main()    
 {
     string nombre = "Sair";
@@ -10,4 +12,14 @@ int main()
     cout << "Hola " << nombre << endl;
 
     return 0;
+}
+
+int procesar_opcion()
+{
+    int opcion;
+
+    cout << "Opcion: ";
+    cin >> opcion;
+
+    return opcion;
 }
