@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int procesar_elegida();
+int opcion_elegida();
 
 int main()    
 {
@@ -14,7 +14,7 @@ int main()
     return 0;
 }
 
-int procesar_elegida()
+int opcion_elegida()
 {
     int opcion;
 
