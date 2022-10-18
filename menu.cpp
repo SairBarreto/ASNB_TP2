@@ -21,5 +21,15 @@ int opcion_elegida()
     cout << "Opcion: ";
     cin >> opcion;
 
+    verificar_opcion(opcion);
+
     return opcion;
+}
+
+void verificar_opcion(int opcion)
+{
+    while(opcion < 1 || opcion > 6){
+        cout << "Eliga una opcion correcta: ";
+        cin >> opcion;
+    }
 }

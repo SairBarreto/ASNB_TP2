@@ -5,4 +5,6 @@ void menu();
 
 int opcion_elegida();
 
+void verificar_opcion(int opcion);
+
 #endif
