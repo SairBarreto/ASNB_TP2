@@ -1,6 +1,8 @@
 #ifndef NODO_H_INCLUDED
 #define NODO_H_INCLUDED
 
+#include <iostream>
+
 using namespace std;
 
 template <typename Dato>

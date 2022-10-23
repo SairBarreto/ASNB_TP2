@@ -43,15 +43,11 @@ public:
 
     //PRE: -
     //POS:
+    Nodo<Dato>* obtener_primer_nodo();
+
+    //PRE: -
+    //POS:
     Dato consulta(int pos);
-
-    //PRE: -
-    //POS:
-    void baja(int pos);
-
-    //PRE: -
-    //POS:
-    bool vacia();
 
     //PRE: -
     //POS:
@@ -59,11 +55,7 @@ public:
 
     //PRE: -
     //POS:
-    bool hay_siguiente();
-
-    //PRE: -
-    //POS:
-    Dato siguiente();
+    bool hay_siguiente_nodo();
 
     //PRE: -
     //POS:
