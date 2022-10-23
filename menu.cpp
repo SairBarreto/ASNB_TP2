@@ -3,7 +3,7 @@
 
 using namespace std;
 
-enum{
+/*enum{
     LISTAR_ANIMALES = 1,
     RESCATAR_ANIMAL,
     BUSCAR_ANIMAL,
@@ -111,4 +111,4 @@ void procesar_opcion_2(int opcion)
             system("pause");
             break;
     }
-}
+}*/
