@@ -4,21 +4,21 @@
 using namespace std;
 
 
-/*enum{
+enum{
     LISTAR_ANIMALES = 1,
     RESCATAR_ANIMAL,
     BUSCAR_ANIMAL,
     CUIDAR_ANIMAL,
     ADOPTAR_ANIMAL,
     GUARDAR_SALIR
-}
+};
 
 enum{
     ELEGIR_INDIVIDUALMENTE = 1,
     ALIMENTAR_TODOS,
     BANIO_TODOS,
     REGRESAR_INICIO
-}
+};
 
 void mostrar_menu()
 {
@@ -112,4 +112,4 @@ void procesar_opcion_2(int opcion)
             system("pause");
             break;
     }
-}*/
+}
