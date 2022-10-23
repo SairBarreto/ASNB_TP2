@@ -9,13 +9,13 @@ Nodo<Dato>::Nodo(Dato dato) {
 
 //Cambiar siguiente
 template <typename Dato>
-void Nodo<Dato>::cambiar_siguiente(Nodo* ptr) {
+void Nodo<Dato>::cambiar_siguiente_nodo(Nodo<Dato>* ptr) {
     this->siguiente = ptr;
 }
 
 //Obtener siguiente
 template <typename Dato>
-Nodo<Dato>* Nodo<Dato>::obtener_siguiente() {
+Nodo<Dato>* Nodo<Dato>::obtener_siguiente_nodo() {
     return siguiente;
 }
 
