@@ -3,20 +3,20 @@
 
 #include "lista.h"
 
+using namespace std;
+
 int main()    
 {
-    Lista<char> l;
-    l.agregar_nodo('P');
-    l.agregar_nodo('T');
-    l.agregar_nodo('A');
-    l.agregar_nodo('O');
+    Lista<int> l;
+    int x = 0;
+    l.agregar_nodo(x);
+
 
     cout << "Cantidad de elementos: " << l.obtener_cantidad() << endl;
     for (int i = 1; i <= l.obtener_cantidad(); i++) {
         cout << l.obtener_actual_dato() << endl;
         l.pasar_nodo();
-    }
-
+    }    
     //~Lista l;
 
 

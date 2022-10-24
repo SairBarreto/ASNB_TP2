@@ -1,5 +1,5 @@
 #include "lista.h"
-
+/*
 //Constructor
 template <typename Dato>
 Lista<Dato>::Lista() {
@@ -87,4 +87,4 @@ bool Lista<Dato>::hay_siguiente_nodo() {
 template <typename Dato>
 int Lista<Dato>::obtener_cantidad() {
     return cantidad;
-}
+}*/

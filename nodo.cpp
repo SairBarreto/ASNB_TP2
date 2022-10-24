@@ -1,5 +1,5 @@
 #include "nodo.h"
-
+/*  
 //Constructor
 template <typename Dato>    
 Nodo<Dato>::Nodo(Dato dato) {
@@ -23,4 +23,4 @@ Nodo<Dato>* Nodo<Dato>::obtener_siguiente_nodo() {
 template <typename Dato>
 Dato Nodo<Dato>::obtener_dato() {
     return dato;
-}
+}*/
