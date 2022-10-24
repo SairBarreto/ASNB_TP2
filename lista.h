@@ -47,7 +47,7 @@ public:
 
     //PRE: -
     //POS:
-    Dato consulta(int pos);
+    Dato consulta();
 
     //PRE: -
     //POS:
@@ -160,6 +160,11 @@ bool Lista<Dato>::hay_siguiente_nodo() {
 template <typename Dato>
 int Lista<Dato>::obtener_cantidad() {
     return cantidad;
+}
+
+template <typename Dato>
+Dato Lista<Dato>::consulta() {
+    return (nodo_actual->obtener_dato());
 }
 
 

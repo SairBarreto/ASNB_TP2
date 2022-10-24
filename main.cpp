@@ -14,7 +14,7 @@ int main()
 
     cout << "Cantidad de elementos: " << l.obtener_cantidad() << endl;
     for (int i = 1; i <= l.obtener_cantidad(); i++) {
-        cout << l.obtener_actual_dato() << endl;
+        cout << l.consulta() << endl;
         l.pasar_nodo();
     }    
     //~Lista l;
