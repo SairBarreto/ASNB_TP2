@@ -1,5 +1,6 @@
 #include <iostream>
 #include "menu.h"
+#include "lista.h"
 
 using namespace std;
 
@@ -10,14 +11,14 @@ enum{
     CUIDAR_ANIMAL,
     ADOPTAR_ANIMAL,
     GUARDAR_SALIR
-}
+};
 
 enum{
     ELEGIR_INDIVIDUALMENTE = 1,
     ALIMENTAR_TODOS,
     BANIO_TODOS,
     REGRESAR_INICIO
-}
+};
 
 void mostrar_menu()
 {
@@ -54,6 +55,7 @@ void procesar_opcion(int opcion)
 {
     switch(opcion){
         case LISTAR_ANIMALES:
+            mostrar_todos_los_animales();
             system("pause");
             break;
         case RESCATAR_ANIMAL:
@@ -76,6 +78,13 @@ void procesar_opcion(int opcion)
             system("pause");
             break;
     }
+}
+
+mostrar_todos_los_animales()
+{
+	for (int i = 1; i <= l.obtener_cantidad(); i++){
+		cout << l.consulta(i).nombre << "," << l.consulta(i).edad << "," << l.consulta(i).tamanio << "," << l.consulta(i).especie << "," << l.consulta(i).personalidad << endl;
+	}
 }
 
 void mostrar_menu_2()
