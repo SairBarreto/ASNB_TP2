@@ -94,6 +94,8 @@ void mostrar_menu_2()
     cout << "2.Alimentar a todos" << endl;
     cout << "3.Bañar a todos" << endl;
     cout << "4.Regresar al inicio" << endl;
+
+    
 }
 
 void verificar_opcion_2(int opcion_2)
