@@ -1,28 +1,45 @@
 #include <iostream>
-#include <string>
-#include "menu.h"
-
+#include <Animal.h>
+#include <Perro.h>
 using namespace std;
 
-int opcion_elegida();
-void menu();
-#include "lista.h"
-
-int main()    
+int main()
 {
-    Lista<char> l;
-    l.agregar_nodo('P');
-    l.agregar_nodo('T');
-    l.agregar_nodo('A');
-    l.agregar_nodo('O');
+    Animal *vector_1[3];
 
-    cout << "Cantidad de elementos: " << l.obtener_cantidad() << endl;
-    for (int i = 1; i <= l.obtener_cantidad(); i++) {
-        cout << l.obtener_actual_dato() << endl;
-        l.pasar_nodo();
-    }
+    vector_1[0] = new Perro("chichita",1,"p","p","Dormilon");
 
-    //~Lista l;
+
+    cout<<vector_1[0]->get_hambre()<<endl;
+
+    vector_1[0]->gastar_energia();
+
+
+    cout<<vector_1[0]->get_hambre()<<endl;
+
+
+   /*
+    cout<<animalito.get_hambre()<<endl;
+    animalito.gastar_energia();
+    animalito.alimentar();
+
+    cout<<animalito.get_hambre()<<endl;
+
+    animalito.gastar_energia();
+
+
+
+    cout<<animalito.get_hambre()<<endl;
+
+    Perro perrito("sonny",1,"d","p","Dormilon");
+
+    cout<<"Empieza sonny"<<endl;*/
+
+
+
+
+
+
 
 
     return 0;
