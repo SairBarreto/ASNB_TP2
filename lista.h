@@ -23,7 +23,7 @@ public:
 
     //PRE: -
     //POS:
-    void agregar_nodo(Dato dato);
+    void agregar_nodo(Dato* dato);
 
     //PRE: -
     //POS:
@@ -47,15 +47,8 @@ public:
 
     //PRE: -
     //POS:
-    Dato consulta();
-
-    //PRE: -
-    //POS:
     int obtener_cantidad();
 
-    //PRE: -
-    //POS:
-    bool hay_siguiente_nodo();
 
     //PRE: -
     //POS:
@@ -65,11 +58,6 @@ public:
     //POS:
     ~Lista();
 
-private:
-    //PRE: -
-    //POS:
-    Nodo<Dato>* obtener_nodo_primero(int pos);
-
 };
 
 
@@ -77,13 +65,14 @@ private:
 template <typename Dato>
 Lista<Dato>::Lista() {
     nodo_primero = 0;
-    nodo_actual = nodo_primero;
+    nodo_actual = 0;
+    nodo_anterior = 0;
     cantidad = 0;
 }
 
 //Alta
 template <typename Dato>
-void Lista<Dato>::agregar_nodo(Dato dato) {
+void Lista<Dato>::agregar_nodo(Dato* dato) {
     Nodo<Dato>* nodo_nuevo = new Nodo<Dato>(dato);
     nodo_nuevo->cambiar_siguiente_nodo(nodo_primero);
     nodo_primero = nodo_nuevo;
@@ -94,6 +83,7 @@ void Lista<Dato>::agregar_nodo(Dato dato) {
 //Volver al principio al nodo actual
 template <typename Dato>
 void Lista<Dato>::iniciar_nodo_actual() {
+    nodo_anterior = 0;
     nodo_actual = nodo_primero;
 }
 
@@ -101,7 +91,8 @@ void Lista<Dato>::iniciar_nodo_actual() {
 template <typename Dato>
 Dato* Lista<Dato>::obtener_actual_dato(){
     if(nodo_actual != 0)
-        return nodo_actual->obtener_dato;
+        return nodo_actual->obtener_dato();
+    return 0;
 }
 
 //Borrar nodo actual
@@ -109,12 +100,12 @@ template <typename Dato>
 void Lista<Dato>::borrar_nodo_actual() {
     //nodo actual es el primero
     if(nodo_actual == nodo_primero) {
-        nodo_primero = nodo_primero->obtener_siguiente();
+        nodo_primero = nodo_primero->obtener_siguiente_nodo();
         delete nodo_actual;
     }
     //nodo actual no es el primero
     else {
-        nodo_anterior->cambiar_siguiente(nodo_actual->obtener_siguiente_nodo());
+        nodo_anterior->cambiar_siguiente_nodo(nodo_actual->obtener_siguiente_nodo());
         delete nodo_actual;
     }
     iniciar_nodo_actual();
@@ -150,22 +141,10 @@ Nodo<Dato>* Lista<Dato>::obtener_primer_nodo() {
     return nodo_primero;
 }
 
-//Verifica si hay un nodo siguiente
-template <typename Dato>
-bool Lista<Dato>::hay_siguiente_nodo() {
-    return (nodo_actual->obtener_siguiente_nodo() != 0);
-}
-
 //Obtener cantidad
 template <typename Dato>
 int Lista<Dato>::obtener_cantidad() {
     return cantidad;
 }
-
-template <typename Dato>
-Dato Lista<Dato>::consulta() {
-    return (nodo_actual->obtener_dato());
-}
-
 
 #endif //LISTA_H_INCLUDED

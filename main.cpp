@@ -2,23 +2,22 @@
 #include <string>
 
 #include "lista.h"
+#include "animal.h"
 
 using namespace std;
 
 int main()    
 {
-    Lista<int> l;
-    int x = 0;
-    l.agregar_nodo(x);
+    Lista<Animal> *l = new Lista<Animal>;
 
+    Animal* gato = new Animal("membrillo", 1, "chico");
 
-    cout << "Cantidad de elementos: " << l.obtener_cantidad() << endl;
-    for (int i = 1; i <= l.obtener_cantidad(); i++) {
-        cout << l.consulta() << endl;
-        l.pasar_nodo();
-    }    
-    //~Lista l;
+    l->agregar_nodo(gato);
+    Animal* perro = l->obtener_actual_dato();
+    cout << perro->mostrar_nombre() << endl;
+    l->borrar_nodo_actual();
 
+    delete l;
 
     return 0;
 }
