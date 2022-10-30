@@ -1,62 +1,50 @@
 #include <iostream>
 #include "menu.h"
 #include "Lista.h"
+#include "animal_handler.h"
 
 using namespace std;
 
-enum{
-    LISTAR_ANIMALES = 1,
-    RESCATAR_ANIMAL,
-    BUSCAR_ANIMAL,
-    CUIDAR_ANIMAL,
-    ADOPTAR_ANIMAL,
-    GUARDAR_SALIR
-};
-
-enum{
-    ELEGIR_INDIVIDUALMENTE = 1,
-    ALIMENTAR_TODOS,
-    BANIO_TODOS,
-    REGRESAR_INICIO
-};
 
 void mostrar_menu()
 {
-    cout << "\tMenu" << endl;
-    cout << "1.Listar animales" << endl;
-    cout << "2.Rescatar animal" << endl;
-    cout << "3.Buscar animal" << endl;
-    cout << "4.Cuidar animales" << endl;
-    cout << "5.Adoptar animal" << endl;
-    cout << "6.Guardar y salir" << endl;
+    cout << endl;
+    cout << "---------------------------------------------------------" << endl << endl;
+    cout << "MENU" << endl;
+    cout << "\t 1.Listar animales" << endl;
+    cout << "\t 2.Rescatar animal" << endl;
+    cout << "\t 3.Buscar animal" << endl;
+    cout << "\t 4.Cuidar animales" << endl;
+    cout << "\t 5.Adoptar animal" << endl;
+    cout << "\t 6.Guardar y salir" << endl;
+    cout << endl;
 }
 
-int opcion_elegida()
-{
+int menu_pedir_opcion(){
     int opcion;
-
-    cout << "Opcion: ";
+    cout << "Ingrese el número de su acción elegida : ";
     cin >> opcion;
-
-    verificar_opcion(opcion);
-
+    cout << endl << "---------------------------------------------------------" << endl << endl;
     return opcion;
 }
 
-void verificar_opcion(int opcion)
-{
-    while(opcion < 1 || opcion > 6){
-        cout << "Eliga una opcion correcta: ";
-        cin >> opcion;
+void menu_validar_opcion(int &opcion){
+    bool es_opcion_valida = opcion > 0 && opcion <= CANTIDAD_DE_OPCIONES;
+    string buffer;
+    while(!es_opcion_valida){
+        cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
+        getline(cin >> ws,buffer);
+        opcion = stoi(buffer);
+        es_opcion_valida = opcion > 0 && opcion <= CANTIDAD_DE_OPCIONES;
     }
 }
 
-void procesar_opcion(int opcion)
+void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
 {
     switch(opcion){
         case LISTAR_ANIMALES:
-            mostrar_todos_los_animales();
-            system("pause");
+            listar_animales(lista_animales);
+            //system("pause");
             break;
         case RESCATAR_ANIMAL:
             system("pause");
@@ -67,25 +55,20 @@ void procesar_opcion(int opcion)
         case CUIDAR_ANIMAL:
             int opcion_2;
             mostrar_menu_2();
-            opcion_2 = opcion_elegida();
+            opcion_2 = menu_pedir_opcion();
             verificar_opcion_2(opcion_2);
             system("pause");
             break;
         case ADOPTAR_ANIMAL:
             system("pause");
             break;
-        case GUARDAR_SALIR:
+        case SALIR:
             system("pause");
             break;
     }
 }
 
-void mostrar_todos_los_animales()
-{
-	/*for (int i = 1; i <= l.obtener_cantidad(); i++){
-		cout << l.consulta(i).nombre << "," << l.consulta(i).edad << "," << l.consulta(i).tamanio << "," << l.consulta(i).especie << "," << l.consulta(i).personalidad << endl;
-	}*/
-}
+
 
 void mostrar_menu_2()
 {
