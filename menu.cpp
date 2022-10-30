@@ -1,8 +1,8 @@
 #include <iostream>
 #include "menu.h"
+#include "Lista.h"
 
 using namespace std;
-
 
 enum{
     LISTAR_ANIMALES = 1,
@@ -55,6 +55,7 @@ void procesar_opcion(int opcion)
 {
     switch(opcion){
         case LISTAR_ANIMALES:
+            mostrar_todos_los_animales();
             system("pause");
             break;
         case RESCATAR_ANIMAL:
@@ -79,6 +80,13 @@ void procesar_opcion(int opcion)
     }
 }
 
+void mostrar_todos_los_animales()
+{
+	/*for (int i = 1; i <= l.obtener_cantidad(); i++){
+		cout << l.consulta(i).nombre << "," << l.consulta(i).edad << "," << l.consulta(i).tamanio << "," << l.consulta(i).especie << "," << l.consulta(i).personalidad << endl;
+	}*/
+}
+
 void mostrar_menu_2()
 {
     cout << "\tMenu" << endl;
@@ -86,6 +94,8 @@ void mostrar_menu_2()
     cout << "2.Alimentar a todos" << endl;
     cout << "3.Bañar a todos" << endl;
     cout << "4.Regresar al inicio" << endl;
+
+    
 }
 
 void verificar_opcion_2(int opcion_2)
