@@ -47,3 +47,7 @@ void Animal::ensuciar()
 {
     higiene = higiene - 10;
 }
+
+string Animal::obtener_nombre() {
+    return nombre;
+}
