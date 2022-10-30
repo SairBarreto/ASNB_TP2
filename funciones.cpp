@@ -27,6 +27,37 @@ void leer_archivo(){
                     Animal* Perro = new Animal(animal.nombre, animal.edad, animal.tamanio);
                     l->agregar_nodo(Perro);
                     cout << l->obtener_actual_dato()->mostrar_nombre() <<endl;
+                    break;
+                    case "G":
+                    Animal* Gato = new Animal(animal.nombre, animal.edad, animal.tamanio);
+                    l->agregar_nodo(Gato);
+                    cout << l->obtener_actual_dato()->mostrar_nombre() <<endl;
+                    break;
+                    case "C":
+                    Animal* Caballo = new Animal(animal.nombre, animal.edad, animal.tamanio);
+                    l->agregar_nodo(Caballo);
+                    cout << l->obtener_actual_dato()->mostrar_nombre() <<endl;
+                    break;
+                    case "R":
+                    Animal* Roedor = new Animal(animal.nombre, animal.edad, animal.tamanio);
+                    l->agregar_nodo(Roedor);
+                    cout << l->obtener_actual_dato()->mostrar_nombre() <<endl;
+                    break;
+                    case "O":
+                    Animal* Conejo = new Animal(animal.nombre, animal.edad, animal.tamanio);
+                    l->agregar_nodo(Conejo);
+                    cout << l->obtener_actual_dato()->mostrar_nombre() <<endl;
+                    break;
+                    case "E":
+                    Animal* Erizo = new Animal(animal.nombre, animal.edad, animal.tamanio);
+                    l->agregar_nodo(Erizo);
+                    cout << l->obtener_actual_dato()->mostrar_nombre() <<endl;
+                    break;
+                    case "L":
+                    Animal* Lagartija = new Animal(animal.nombre, animal.edad, animal.tamanio);
+                    l->agregar_nodo(Lagartija);
+                    cout << l->obtener_actual_dato()->mostrar_nombre() <<endl;
+                    break;
             }
         }
     }
