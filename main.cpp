@@ -1,16 +1,46 @@
 #include <iostream>
-#include <string>
-#include "menu.h"
-#include "lista.h"
-
+#include <Animal.h>
+#include <Perro.h>
 using namespace std;
 
-void menu();
-
-int main()    
+int main()
 {
-    
-    mostrar_menu();
+    Animal *vector_1[3];
+
+    vector_1[0] = new Perro("chichita",1,"p","p","Dormilon");
+
+
+    cout<<vector_1[0]->get_hambre()<<endl;
+
+    vector_1[0]->gastar_energia();
+
+
+    cout<<vector_1[0]->get_hambre()<<endl;
+
+
+   /*
+    cout<<animalito.get_hambre()<<endl;
+    animalito.gastar_energia();
+    animalito.alimentar();
+
+    cout<<animalito.get_hambre()<<endl;
+
+    animalito.gastar_energia();
+
+
+
+    cout<<animalito.get_hambre()<<endl;
+
+    Perro perrito("sonny",1,"d","p","Dormilon");
+
+    cout<<"Empieza sonny"<<endl;*/
+
+
+
+
+
+
+
 
     return 0;
 }
