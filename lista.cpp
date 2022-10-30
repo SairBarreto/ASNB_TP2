@@ -1,102 +1,87 @@
 #include "lista.h"
 
 //Constructor
-Lista::Lista() 
-{
+template <typename Dato>
+Lista<Dato>::Lista() {
     nodo_primero = 0;
+    nodo_actual = 0;
+    nodo_anterior = 0;
     cantidad = 0;
-    nodo_actual = nodo_primero;
 }
 
 //Alta
-void Lista::agregar_nodo(Dato dato, int posicion) 
-{
-	Nodo* nodo_nuevo = new Nodo(dato);
-    Nodo* nodo_siguiente = nodo_primero;
-    
-	if (posicion == 1) {
-        nodo_primero = nodo_nuevo;
-    }
-    else {
-        Nodo* nodo_anterior = obtener_nodo(posicion - 1);
-        nodo_siguiente = nodo_anterior->obtener_siguiente();
-        nodo_anterior->cambiar_siguiente(nuevo);
-    }
-    
-	nodo_nuevo->cambiar_siguiente(siguiente);
+template <typename Dato>
+void Lista<Dato>::agregar_nodo(Dato* dato) {
+    Nodo<Dato>* nodo_nuevo = new Nodo<Dato>(dato);
+    nodo_nuevo->cambiar_siguiente_nodo(nodo_primero);
+    nodo_primero = nodo_nuevo;
     cantidad++;
+    iniciar_nodo_actual();
 }
 
-/*/Volver al principio al nodo actual
+//Volver al principio al nodo actual
+template <typename Dato>
 void Lista<Dato>::iniciar_nodo_actual() {
+    nodo_anterior = 0;
     nodo_actual = nodo_primero;
-}*/
+}
 
-/*/Consulta el dato del nodo actual
-Dato* Lista::obtener_actual_dato(){
+//Consulta el dato del nodo actual
+template <typename Dato>
+Dato* Lista<Dato>::obtener_actual_dato(){
     if(nodo_actual != 0)
         return nodo_actual->obtener_dato();
-}*/
-
-//Revisa si hay elementos en la lista
-bool Lista::vacia() 
-{
-    return (cantidad == 0);
+    return 0;
 }
 
-//Borrar nodo que esta en posicion
-void Lista::borrar_nodo(int posicion) 
-{
-	Nodo* borrar_nodo = nodo_primero;
-    
-	if (posicion == 1) {
-        nodo_primero = borrar_nodo->obtener_siguiente();
+//Borrar nodo actual
+template <typename Dato>
+void Lista<Dato>::borrar_nodo_actual() {
+    //nodo actual es el primero
+    if(nodo_actual == nodo_primero) {
+        nodo_primero = nodo_primero->obtener_siguiente_nodo();
+        delete nodo_actual;
     }
+    //nodo actual no es el primero
     else {
-        Nodo* nodo_anterior = obtener_nodo(posicion - 1);
-        borrar_nodo = nodo_anterior->obtener_siguiente();
-        nodo_anterior->cambiar_siguiente(borrar_nodo->obtener_siguiente());
+        nodo_anterior->cambiar_siguiente_nodo(nodo_actual->obtener_siguiente_nodo());
+        delete nodo_actual;
     }
-    
-	delete borrar_nodo;
-    cantidad--;
-}
-
-/*/Mueve el nodo actual al siguiente
-void Lista<Dato>::pasar_nodo() {
-    nodo_anterior = nodo_actual;
-    nodo_actual = nodo_actual->obtener_siguiente_nodo();
-}*/
-
-/*/Devuelve el primer nodo
-Nodo<Dato>* Lista<Dato>::obtener_primer_nodo() {
-    return nodo_primero;
-}*/
-
-//Consulta
-Dato Lista::consulta(int posicion) 
-{
-    
-	Nodo* nodo = obtener_nodo(posicion);
-    
-	return (nodo->obtener_dato());
-}
-
-//Obtener cantidad
-int Lista::obtener_cantidad() 
-{
-    return cantidad;
-}
-
-//Verifica si hay un nodo siguiente
-bool Lista::hay_siguiente_nodo() 
-{
-    return (nodo_actual != 0);
+    iniciar_nodo_actual();
 }
 
 //Destructor
-Lista::~Lista() 
-{
-    while (! vacia())
-        borrar_nodo(1);
+template <typename Dato>
+Lista<Dato>::~Lista() {
+    while(nodo_primero != 0) {
+        Nodo<Dato>* aux = nodo_primero->obtener_siguiente_nodo();
+        delete nodo_primero;
+        nodo_primero = aux;
+    }
+}
+
+
+//Revisa si apunta a nulo el nodo actual
+template <typename Dato>
+bool Lista<Dato>::es_nulo_nodo_actual() {
+    return nodo_actual == 0;
+}
+
+//Mueve el nodo actual al siguiente
+template <typename Dato>
+void Lista<Dato>::pasar_nodo() {
+    nodo_anterior = nodo_actual;
+    nodo_actual = nodo_actual->obtener_siguiente_nodo();
+}
+
+//Devuelve el primer nodo
+template <typename Dato>
+Nodo<Dato>* Lista<Dato>::obtener_primer_nodo() {
+    return nodo_primero;
+}
+
+//Obtener cantidad
+template <typename Dato>
+int Lista<Dato>::obtener_cantidad() {
+    return cantidad;
 }

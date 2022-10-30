@@ -1,6 +1,9 @@
 #include <iostream>
+#include <string>
+#include <fstream>
 #include "menu.h"
 #include "lista.h"
+#include "animal.h"
 
 using namespace std;
 
@@ -79,14 +82,34 @@ void procesar_opcion(int opcion)
             break;
     }
 }
-
-mostrar_todos_los_animales()
+/*
+void mostrar_todos_los_animales()
 {
-	for (int i = 1; i <= l.obtener_cantidad(); i++){
-		cout << l.consulta(i).nombre << "," << l.consulta(i).edad << "," << l.consulta(i).tamanio << "," << l.consulta(i).especie << "," << l.consulta(i).personalidad << endl;
-	}
-}
+    Animal animal;
+    char delimitador = ','; //El delimitador tiene que de tipo char con string no funciona 
+	string edad;
+    ifstream archivo("animales-normal.csv", ios::in);
 
+    if(archivo.is_open()){
+
+        while(!archivo.eof())
+        {
+            getline(archivo, animal.nombre, delimitador);
+            getline(archivo, edad, delimitador);
+            getline(archivo, animal.tamanio, delimitador);
+            getline(archivo, animal.especie, delimitador);
+            getline(archivo, animal.personalidad, '\n');
+
+            animal.edad = stoi(edad);
+
+            cout << animal.nombre << "," << animal.edad << "," << animal.tamanio << "," << animal.especie << "," << animal.personalidad << endl;
+        }
+    }
+    else{
+        cout << "No se pudo leer el archivo" << endl;
+    }
+}
+*/
 void mostrar_menu_2()
 {
     cout << "\tMenu" << endl;

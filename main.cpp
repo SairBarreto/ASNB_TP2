@@ -1,16 +1,24 @@
 #include <iostream>
 #include <string>
-#include "menu.h"
+
 #include "lista.h"
+#include "animal.h"
+//#include "gato.h"
 
 using namespace std;
 
-void menu();
-
 int main()    
 {
-    
-    mostrar_menu();
+    Lista<Animal> *l = new Lista<Animal>;
+
+    Animal* gato = new Animal("membrillo", 1, "chico", "gato");
+
+    l->agregar_nodo(gato);
+    //Animal* perro = l->obtener_actual_dato();
+    cout << l->obtener_actual_dato()->mostrar_nombre() << endl;
+    l->borrar_nodo_actual();
+
+    delete l;
 
     return 0;
 }

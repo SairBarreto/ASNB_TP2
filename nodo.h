@@ -1,48 +1,50 @@
 #ifndef NODO_H_INCLUDED
 #define NODO_H_INCLUDED
+
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-//template <typename Dato>
+template <typename Dato>
 
-struct Animal{
-    string nombre;
-    int edad;
-    string tamanio;
-    string especie;
-    string personalidad;
-};
-
-typedef Animal Dato;
-
-class Nodo{
+class Nodo 
+{
     //Atributos
     private:
         
-        Dato dato;
+        Dato* dato;
         Nodo* siguiente;
 
     //Metodos
     public:
 
         //PRE: -
-        //POS: Crea un nodo con this->dato = dato y siguiente = 0; 
-        Nodo(Dato dato);
+        //POS: Crea un nodo con dato = d y siguiente = 0; 
+        Nodo(Dato* dato);
 
         //PRE: -
         //POS:
-        void cambiar_siguiente_nodo(Nodo* ptr);
+        void cambiar_siguiente_nodo(Nodo<Dato>* ptr);
 
         //PRE: -
         //POS:
-        Dato obtener_dato();
+        Dato* obtener_dato();
 
         //PRE: -
         //POS:
         Nodo* obtener_siguiente_nodo();
-};
 
+        //PRE: -
+        //POS:
+        void cambiar_nuevo_dato(Dato nuevo_dato);
+
+        //PRE: -
+        //POS:
+        bool es_no_nulo_proximo_nulo();
+
+        //PRE: -
+        //POS:
+        ~Nodo();
+};
 
 #endif // NODO_H_INCLUDED
