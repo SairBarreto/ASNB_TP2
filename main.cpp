@@ -1,6 +1,6 @@
 #include <iostream>
-#include <Animal.h>
-#include <Perro.h>
+#include "Animal.h"
+#include "Perro.h"
 using namespace std;
 
 int main()
@@ -44,3 +44,17 @@ int main()
 
     return 0;
 }
+
+/*Lista<Animal> *l = new Lista<Animal>;
+
+    Animal* gato = new Animal("membrillo", 1, "chico");
+
+    l->agregar_nodo(gato);
+    Animal* perro = l->obtener_actual_dato();
+    cout << perro->mostrar_nombre() << endl;
+    l->borrar_nodo_actual();
+
+    delete l;
+
+    return 0;
+*/

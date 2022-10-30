@@ -1,7 +1,7 @@
 #ifndef LAGARTIJA_H
 #define LAGARTIJA_H
 
-#include <Animal.h>
+#include "Animal.h"
 
 
 class Lagartija : public Animal

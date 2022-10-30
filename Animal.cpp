@@ -3,14 +3,14 @@
 using namespace std;
 
 
-Animal::Animal(string _nombre, int _edad, string _tamanio, string _especie)
+Animal::Animal(string nombre, int edad, string tamanio, string especie)
 {
-    nombre = _nombre;
-    edad = _edad;
-    tamanio = _tamanio;
-    especie = _especie;
-    hambre = 0;
-    higiene = 100;
+    this->nombre = nombre;
+    this->edad = edad;
+    this->tamanio = tamanio;
+    this->especie = especie;
+    this->hambre = 0;
+    this->higiene = 100;
 }
 
 int Animal::get_higiene()
