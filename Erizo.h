@@ -1,7 +1,7 @@
 #ifndef ERIZO_H
 #define ERIZO_H
 
-#include <Animal.h>
+#include "Animal.h"
 
 
 class Erizo : public Animal
