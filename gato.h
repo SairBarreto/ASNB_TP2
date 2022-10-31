@@ -1,7 +1,7 @@
 #ifndef GATO_H
 #define GATO_H
 
-#include "animal.h"
+#include "Animal.h"
 
 #include <iostream>
 
@@ -13,12 +13,10 @@ class Gato : public Animal
         string personalidad;
     public:
         Gato(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
-
         void set_gato(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
-
         void gastar_energia();//aumenta niveles de hambre
 
-        string mostrar_nombre();
+
 };
 
 #endif // GATO_H

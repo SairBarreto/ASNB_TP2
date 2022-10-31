@@ -1,25 +1,30 @@
 #include <iostream>
-#include <string>
 
-#include "lista.h"
-#include "animal.h"
-//#include "gato.h"
+#include "Lista.h"
+#include "Animal.h"
+#include "animal_handler.h"
+#include "menu.h"
 
 using namespace std;
 
-int main()    
+int main()
 {
-    Lista<Animal> *l = new Lista<Animal>;
+    Lista<Animal>* lista_animales = new Lista<Animal>;
+    int opcion = 0;
 
-    Animal* gato = new Animal("membrillo", 1, "chico", "gato");
+    leer_archivo(lista_animales);
 
-    l->agregar_nodo(gato);
-    //Animal* perro = l->obtener_actual_dato();
-    cout << gato->mostrar_nombre() << endl;
+    mostrar_menu();
+    opcion = menu_pedir_opcion();
     
-    l->borrar_nodo_actual();
+    while(opcion != SALIR) {
+        procesar_opcion(opcion, lista_animales);
+        mostrar_menu();
+        opcion = menu_pedir_opcion();
+        menu_validar_opcion(opcion);
+    }
 
-    delete l;
+    delete lista_animales;
 
     return 0;
 }

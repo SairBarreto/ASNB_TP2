@@ -1,9 +1,12 @@
-#include "gato.h"
+#include "Gato.h"
+
+
 
 Gato::Gato(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad): Animal(_nombre,_edad,_tamanio,_especie)
 {
     personalidad = _personalidad;
 }
+
 
 
 void Gato::gastar_energia()
@@ -20,9 +23,4 @@ void Gato::gastar_energia()
     {
         Animal::gastar_energia();
     }
-}
-
-string Gato::mostrar_nombre()
-{
-    Animal::mostrar_nombre();
 }
