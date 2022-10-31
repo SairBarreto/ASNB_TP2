@@ -15,7 +15,8 @@ int main()
 
     l->agregar_nodo(gato);
     //Animal* perro = l->obtener_actual_dato();
-    cout << l->obtener_actual_dato()->mostrar_nombre() << endl;
+    cout << gato->mostrar_nombre() << endl;
+    
     l->borrar_nodo_actual();
 
     delete l;
