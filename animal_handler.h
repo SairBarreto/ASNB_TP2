@@ -28,7 +28,6 @@ const string ESPECIES_STR[7] = {
 };
 
 
-
 const string PATH_ANIMALES = "animales.csv";
 
 

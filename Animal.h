@@ -24,8 +24,6 @@ class Animal
         int higiene;
         string obtener_nombre();    
         virtual ~Animal(){};
-
-
 };
 
 #endif // ANIMAL_H
