@@ -108,6 +108,8 @@ void listar_animales(Lista<Animal>* lista_animales) {
         cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
         lista_animales->pasar_nodo();
     }
+
+    lista_animales->iniciar_nodo_actual();
 }
 
 
