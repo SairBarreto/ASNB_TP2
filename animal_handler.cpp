@@ -105,7 +105,7 @@ void listar_animales(Lista<Animal>* lista_animales) {
     cout << "Animales en la Reserva:" << endl;
 
     for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
-        cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+        cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << " Higiene:" << lista_animales->obtener_actual_dato()->obtener_higiene() << ", Hambre:"<< lista_animales->obtener_actual_dato()->obtener_hambre() << endl;
         lista_animales->pasar_nodo();
     }
 
@@ -120,4 +120,14 @@ especie_t string_a_especie_t(string especie) {
             posicion = i;
     }
     return (especie_t) posicion;
+}
+
+
+void animales_paso_del_tiempo(Lista<Animal>* lista_animales) {
+    for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
+        lista_animales->obtener_actual_dato()->ensuciar();
+        lista_animales->obtener_actual_dato()->gastar_energia();
+        lista_animales->pasar_nodo();
+    }
+    lista_animales->iniciar_nodo_actual();
 }

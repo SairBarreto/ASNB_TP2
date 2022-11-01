@@ -22,7 +22,9 @@ class Animal
         int get_hambre();
         int hambre;
         int higiene;
-        string obtener_nombre();    
+        string obtener_nombre();
+        int obtener_higiene();  
+        int obtener_hambre(); 
         virtual ~Animal(){};
 
 
