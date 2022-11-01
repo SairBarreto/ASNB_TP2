@@ -145,6 +145,17 @@ void menu_validar_opcion_individual(int &opcion)
     }
 }
 
+string elegir_nombre()
+{
+    string nombre;
+    cout << endl;
+    cout << "Ingrese el nombre del animal: ";
+    fflush(stdin);
+    getline(cin, nombre);
+
+    return nombre;
+}
+
 void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales, int &posicion, string nombre_busacdo)
 {
     switch (opcion){

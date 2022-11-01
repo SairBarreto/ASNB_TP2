@@ -138,7 +138,7 @@ void alimentar_todos_animales(Lista<Animal>* lista_animales)
 
     lista_animales->iniciar_nodo_actual();
 }
-
+//Funciona
 void banio_todos(Lista<Animal>* lista_animales)
 {
     char especie;
@@ -169,16 +169,13 @@ void banio_todos(Lista<Animal>* lista_animales)
 
     lista_animales->iniciar_nodo_actual();
 }
-
+//Probar
 void elegir_individualmente(Lista<Animal>* lista_animales)
 {
     string nombre_buscado;
     int opcion;
 
-    cout << endl;
-    cout << "Ingrese el nombre del animal: ";
-    fflush(stdin);
-    getline(cin, nombre_buscado);
+    nombre_buscado = elegir_nombre();
 
     for(int i = 0; i < lista_animales->obtener_cantidad(); i++){
         
