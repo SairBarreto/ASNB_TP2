@@ -122,7 +122,6 @@ especie_t string_a_especie_t(string especie) {
     return (especie_t) posicion;
 }
 
-//Si declaras una funcion nueva en el .cpp tambien tenes que declararla en el .h
 void adoptar_animal(Lista<Animal>* lista_animales){
     int metros_cuadrados = 0;
     cout << "Ingrese cantidad de metros cuadrados disponibles:" << endl;

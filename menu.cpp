@@ -75,6 +75,7 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             system("pause");
             break;
         case ADOPTAR_ANIMAL:
+            adoptar_animal(lista_animales);
             system("pause");
             break;
         case SALIR:
