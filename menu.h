@@ -10,8 +10,7 @@ enum{
     BUSCAR_ANIMAL,
     CUIDAR_ANIMAL,
     ADOPTAR_ANIMAL,
-    SALIR,
-    CANTIDAD_DE_OPCIONES
+    SALIR
 };
 
 enum{
@@ -29,12 +28,10 @@ void menu_validar_opcion(int &opcion);
 
 void procesar_opcion(int opcion, Lista<Animal>* lista_animales);
 
-void mostrar_todos_los_animales();
-
 void mostrar_menu_2();
 
-void verificar_opcion_2(int opcion_2);
+void menu_validar_opcion_2(int &opcion_2);
 
-void procesar_opcion_2(int opcion);
+void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales);
 
 #endif

@@ -105,7 +105,7 @@ void listar_animales(Lista<Animal>* lista_animales) {
     cout << "Animales en la Reserva:" << endl;
 
     for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
-        cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+        cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << " - " << lista_animales->obtener_actual_dato()->get_hambre() << " - " << lista_animales->obtener_actual_dato()->get_higiene() << endl;
         lista_animales->pasar_nodo();
     }
 
@@ -120,4 +120,51 @@ especie_t string_a_especie_t(string especie) {
             posicion = i;
     }
     return (especie_t) posicion;
+}
+
+//Cosas para el Manu 2
+//Funciona
+void alimentar_todos_animales(Lista<Animal>* lista_animales)
+{
+    for(int i = 0; i < lista_animales->obtener_cantidad(); i++){
+        lista_animales->obtener_actual_dato()->hambre = 0;
+        lista_animales->pasar_nodo();
+    }
+
+    cout << endl;
+    cout << "Se han Alimentado a todos los animales en la Reserva" << endl;
+    cout << endl << "---------------------------------------------------------" << endl << endl;
+
+    lista_animales->iniciar_nodo_actual();
+}
+
+void banio_todos(Lista<Animal>* lista_animales)
+{
+    char especie;
+    for(int i = 0; i < lista_animales->obtener_cantidad(); i++){
+        especie = lista_animales->obtener_actual_dato()->obtener_especie()[0];
+
+        switch (especie){
+            case 'G':
+                cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es un Gato por lo que no necesita un baño" << endl;
+                break;
+            case 'R':
+                cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es una Lagartija por lo que no necesita un baño" << endl;
+                break;
+            case 'L':
+                cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es un Roedor por lo que no necesita un baño" << endl;
+                break;
+            default:
+                lista_animales->obtener_actual_dato()->higiene = 100;
+                break;
+        }
+
+        lista_animales->pasar_nodo();
+    }
+
+    cout << endl;
+    cout << "Se han bañado a todos los animales que lo necesitan" << endl;
+    cout << endl << "---------------------------------------------------------" << endl << endl;
+
+    lista_animales->iniciar_nodo_actual();
 }

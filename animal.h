@@ -23,6 +23,7 @@ class Animal
         int hambre;
         int higiene;
         string obtener_nombre();    
+        string obtener_especie();
         virtual ~Animal(){};
 
 
