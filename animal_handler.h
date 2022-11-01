@@ -47,3 +47,5 @@ especie_t string_a_especie_t(string especie);
 
 //Para la opcion 2
 void adoptar_animal(Lista<Animal>* lista_animales);
+
+bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ingresado);
