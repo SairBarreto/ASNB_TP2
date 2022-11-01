@@ -39,3 +39,9 @@ especie_t string_a_especie_t(string especie);
 void alimentar_todos_animales(Lista<Animal>* lista_animales);
 
 void banio_todos(Lista<Animal>* lista_animales);
+
+void elegir_individualmente(Lista<Animal>* lista_animales);
+
+void banio_individual(Lista<Animal>* lista_animales, int &posicion, string nombre_buscado);
+
+void comida_individual(Lista<Animal>* lista_animales, int &posicion, string nombre_buscado);
