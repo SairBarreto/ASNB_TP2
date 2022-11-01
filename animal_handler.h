@@ -5,6 +5,13 @@
 
 using namespace std;
 
+enum tamanio_t {
+    DIMINUTO = 0,
+    PEQUENIO =0,
+    MEDIANO = 10,
+    GRANDE = 20,
+    GIGANTE = 50,
+};
 
 enum especie_t {
     CABALLO = 0,

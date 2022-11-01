@@ -123,18 +123,22 @@ especie_t string_a_especie_t(string especie) {
 }
 
 void adoptar_animal(Lista<Animal>* lista_animales){
-
-
-    while(animal.tamanio<=metros_cuadrados){
-        
-    }
-
-
-}
-
-void metros_cuadrados_disponibles(){
     int metros_cuadrados = 0;
-
     cout << "Ingrese cantidad de metros cuadrados disponibles:" << endl;
     cin >> metros_cuadrados;
-}
+
+    lista_animales->iniciar_nodo_actual();
+
+    for(int i=0;i<lista_animales->obtener_cantidad(); i++){
+        if(lista_animales->obtener_actual_dato()->obtener_tamanio()<=metros_cuadrados){ 
+        cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << lista_animales->obtener_actual_dato()->obtener_edad() << lista_animales->obtener_actual_dato()->obtener_especie() << lista_animales->obtener_actual_dato()->obtener_personalidad() << endl;
+        }
+    lista_animales->pasar_nodo(); 
+    }
+    cout << "¿Cual desea adoptar? Ingrese su nombre: " << endl;
+    cin >> nombre_buscado;
+    
+    //usar funcion buscar de punto 2 y 3 y hallar nodo
+    
+    lista_animales->borrar_nodo_actual();
+ }
