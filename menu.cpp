@@ -47,10 +47,12 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             //system("pause");
             break;
         case RESCATAR_ANIMAL:
-            system("pause");
+            rescatar_animales(lista_animales);
+            //system("pause");
             break;
         case BUSCAR_ANIMAL:
-            system("pause");
+            buscar_animales(lista_animales);
+            //system("pause");
             break;
         case CUIDAR_ANIMAL:
             int opcion_2;
@@ -78,7 +80,7 @@ void mostrar_menu_2()
     cout << "3.Bañar a todos" << endl;
     cout << "4.Regresar al inicio" << endl;
 
-    
+
 }
 
 void verificar_opcion_2(int opcion_2)

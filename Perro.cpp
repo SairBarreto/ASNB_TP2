@@ -45,3 +45,9 @@ void Perro ::gastar_energia()
         Animal::gastar_energia();
     }
 }
+
+string Perro::obtener_personalidad()
+{
+    return personalidad;
+}
+

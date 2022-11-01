@@ -16,6 +16,7 @@ class Perro : public Animal
         void set_perro(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
         void ensuciar();
         void gastar_energia();//aumenta niveles de hambre
+        string obtener_personalidad();
 
 
 };

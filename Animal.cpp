@@ -51,3 +51,20 @@ void Animal::ensuciar()
 string Animal::obtener_nombre() {
     return nombre;
 }
+
+int Animal::obtener_edad()
+{
+    return edad;
+}
+
+string Animal::obtener_tamanio()
+{
+    return tamanio;
+}
+
+string Animal::obtener_especie()
+{
+    return especie;
+}
+
+
