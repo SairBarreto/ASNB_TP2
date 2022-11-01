@@ -1,9 +1,10 @@
 #include <iostream>
 #include "menu.h"
+#include "animal_handler.h" //Agregue esto para probar la primera opcion
 
 using namespace std;
 
-
+/* Esto ya esta en el menu.h no es necesario declararlo de nuevo
 enum{
     LISTAR_ANIMALES = 1,
     RESCATAR_ANIMAL,
@@ -19,7 +20,7 @@ enum{
     BANIO_TODOS,
     REGRESAR_INICIO
 };
-
+*/
 void mostrar_menu()
 {
     cout << endl;
@@ -57,6 +58,7 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
 {
     switch(opcion){
         case LISTAR_ANIMALES:
+            listar_animales(lista_animales);
             system("pause");
             break;
         case RESCATAR_ANIMAL:

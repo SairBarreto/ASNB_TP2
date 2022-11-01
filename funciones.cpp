@@ -1,9 +1,20 @@
 #include <iostream>
+#include <string>
+#include <fstream>
 #include "lista.h"
+#include "Animal.h"
+
+struct Animal_{
+    string nombre;
+    int edad;
+    string tamanio;
+    string especie;
+    string personalidad;
+};
 
 void leer_archivo(){
     
-    Animal animal;
+    Animal_ animal;
     string edad;
     char delimitador = ','; //El delimitador tiene que de tipo char con string no funciona 
     ifstream archivo("animales.csv", ios::in);

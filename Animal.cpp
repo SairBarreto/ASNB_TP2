@@ -61,9 +61,11 @@ int Animal::obtener_edad() {
 }
 
 string Animal::obtener_especie() {
-    return nombre;
+    return especie;
 }
 
+/*La personalidad cambia segun el animal, ademas no la personalidad no esta declarada en Animal.h po eso no lo toma 
 string Animal::obtener_personalidad() {
     return personalidad;
 }
+*/

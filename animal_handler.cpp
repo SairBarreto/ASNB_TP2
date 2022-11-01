@@ -122,19 +122,22 @@ especie_t string_a_especie_t(string especie) {
     return (especie_t) posicion;
 }
 
+//Si declaras una funcion nueva en el .cpp tambien tenes que declararla en el .h
 void adoptar_animal(Lista<Animal>* lista_animales){
     int metros_cuadrados = 0;
     cout << "Ingrese cantidad de metros cuadrados disponibles:" << endl;
     cin >> metros_cuadrados;
 
     lista_animales->iniciar_nodo_actual();
-
+    /*
     for(int i=0;i<lista_animales->obtener_cantidad(); i++){
-        if(lista_animales->obtener_actual_dato()->obtener_tamanio()<=metros_cuadrados){ 
+        //tamanio es string por eso no podes decir que sea menor a metros_cuadrados que es un int
+        if(lista_animales->obtener_actual_dato()->obtener_tamanio() <= metros_cuadrados){ 
         cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << lista_animales->obtener_actual_dato()->obtener_edad() << lista_animales->obtener_actual_dato()->obtener_especie() << lista_animales->obtener_actual_dato()->obtener_personalidad() << endl;
         }
-    lista_animales->pasar_nodo(); 
-    }
+        lista_animales->pasar_nodo(); 
+    }*/
+    string nombre_buscado; //Te falto declarar nombre_buscado
     cout << "¿Cual desea adoptar? Ingrese su nombre: " << endl;
     cin >> nombre_buscado;
     

@@ -24,6 +24,10 @@ class Animal
         int higiene;
         string obtener_nombre();    
         virtual ~Animal(){};
+        //Para la opcion 4
+        string obtener_tamanio();
+        int obtener_edad();
+        string obtener_especie();
 
 
 };
