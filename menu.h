@@ -1,6 +1,8 @@
 #ifndef MENU_H
 #define MENU_H 
 
+#include <iostream>
+using namespace std;
 #include "Lista.h"
 #include "Animal.h"
 
@@ -29,12 +31,18 @@ void menu_validar_opcion(int &opcion);
 
 void procesar_opcion(int opcion, Lista<Animal>* lista_animales);
 
-void mostrar_todos_los_animales();
-
 void mostrar_menu_2();
 
-void verificar_opcion_2(int opcion_2);
+void mostrar_todos_los_animales();
 
-void procesar_opcion_2(int opcion);
+void menu_validar_opcion_2(int &opcion_2);
+
+void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales);
+//Para la opcion 4
+void mostrar_menu_individual();
+
+void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales, int &posicion, string nombre_busacdo);
+
+void menu_validar_opcion_individual(int &opcion);
 
 #endif

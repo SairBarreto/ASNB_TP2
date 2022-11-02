@@ -59,6 +59,23 @@ string Animal::obtener_nombre() {
     return nombre;
 }
 
+string Animal::obtener_tamanio() {
+    return tamanio;
+}
+
+int Animal::obtener_edad() {
+    return edad;
+}
+
+string Animal::obtener_especie() {
+    return especie;
+}
+
+/*La personalidad cambia segun el animal, ademas no la personalidad no esta declarada en Animal.h po eso no lo toma 
+string Animal::obtener_personalidad() {
+    return personalidad;
+}
+*/
 
 int Animal::obtener_higiene() {
     return higiene;

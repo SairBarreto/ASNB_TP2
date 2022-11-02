@@ -1,11 +1,26 @@
 #include <iostream>
 #include "menu.h"
-#include "Lista.h"
-#include "animal_handler.h"
+#include "animal_handler.h" //Agregue esto para probar la primera opcion
 
 using namespace std;
 
+/* Esto ya esta en el menu.h no es necesario declararlo de nuevo
+enum{
+    LISTAR_ANIMALES = 1,
+    RESCATAR_ANIMAL,
+    BUSCAR_ANIMAL,
+    CUIDAR_ANIMAL,
+    ADOPTAR_ANIMAL,
+    GUARDAR_SALIR
+};
 
+enum{
+    ELEGIR_INDIVIDUALMENTE = 1,
+    ALIMENTAR_TODOS,
+    BANIO_TODOS,
+    REGRESAR_INICIO
+};
+*/
 void mostrar_menu()
 {
     cout << endl;
@@ -53,22 +68,21 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             system("pause");
             break;
         case CUIDAR_ANIMAL:
-            int opcion_2;
+            //int opcion_2;
             mostrar_menu_2();
-            opcion_2 = menu_pedir_opcion();
-            verificar_opcion_2(opcion_2);
-            system("pause");
+            //opcion_2 = menu_pedir_opcion();
+            //verificar_opcion_2(opcion_2);
+            //system("pause");
             break;
         case ADOPTAR_ANIMAL:
-            system("pause");
+            adoptar_animal(lista_animales);
+            //system("pause");
             break;
         case SALIR:
             system("pause");
             break;
     }
 }
-
-
 
 void mostrar_menu_2()
 {
@@ -77,8 +91,6 @@ void mostrar_menu_2()
     cout << "2.Alimentar a todos" << endl;
     cout << "3.Bañar a todos" << endl;
     cout << "4.Regresar al inicio" << endl;
-
-    
 }
 
 void verificar_opcion_2(int opcion_2)
