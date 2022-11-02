@@ -1,0 +1,99 @@
+# depslib dependency file v1.0
+1667349827 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\caballo.cpp
+	"Caballo.h"
+
+1667349533 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\caballo.h
+	"Animal.h"
+
+1667351446 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\animal.h
+	<iostream>
+
+1667349916 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\conejo.cpp
+	"Conejo.h"
+
+1667349533 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\conejo.h
+	"Animal.h"
+
+1667349997 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\erizo.cpp
+	"Erizo.h"
+
+1667349533 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\erizo.h
+	"Animal.h"
+
+1667349941 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\gato.cpp
+	"Gato.h"
+
+1667349533 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\gato.h
+	"Animal.h"
+	<iostream>
+
+1667350069 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\lagartija.cpp
+	"Lagartija.h"
+
+1667349533 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\lagartija.h
+	"Animal.h"
+
+1667347568 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\lista.cpp
+	"Lista.h"
+
+1667347568 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\lista.h
+	"Nodo.h"
+
+1667347568 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\nodo.h
+	<iostream>
+
+1667347568 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\main.cpp
+	<iostream>
+	"Lista.h"
+	"Animal.h"
+	"animal_handler.h"
+	"menu.h"
+
+1667358139 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\animal_handler.h
+	<iostream>
+	"Lista.h"
+	"Animal.h"
+
+1667347568 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\menu.h
+	"Lista.h"
+	"Animal.h"
+
+1667347922 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\menu.cpp
+	<iostream>
+	"menu.h"
+	"Lista.h"
+	"animal_handler.h"
+
+1667347568 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\nodo.cpp
+	"Nodo.h"
+
+1667350055 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\perro.cpp
+	"Perro.h"
+	<iostream>
+
+1667350055 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\perro.h
+	"Animal.h"
+	<iostream>
+
+1667350096 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\roedor.cpp
+	"Roedor.h"
+
+1667349533 c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\roedor.h
+	"Animal.h"
+
+1667349025 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\animal.cpp
+	"Animal.h"
+	<iostream>
+
+1667359234 source:c:\users\soledad\desktop\tp 2 antopppp\tp 2 code blocks\animal_handler.cpp
+	<iostream>
+	<fstream>
+	"animal_handler.h"
+	"Caballo.h"
+	"Conejo.h"
+	"Erizo.h"
+	"Gato.h"
+	"Lagartija.h"
+	"Perro.h"
+	"Roedor.h"
+

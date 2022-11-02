@@ -11,9 +11,10 @@ class Animal
         int edad;
         string tamanio;
         string especie;
+        string personalidad;
 
     public:
-        Animal(string nombre, int edad, string tamanio, string especie);
+        Animal(string nombre, int edad, string tamanio, string especie,string personalidad);
         virtual void ensuciar();
         virtual void gastar_energia();//aumenta niveles de hambre
         void baniar();
@@ -26,7 +27,8 @@ class Animal
         int obtener_edad();
         string obtener_tamanio();
         string obtener_especie();
-        //string obtener_personalidad();
+        string obtener_personalidad();
+
         virtual ~Animal(){};
 
 

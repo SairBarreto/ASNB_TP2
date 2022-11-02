@@ -68,3 +68,5 @@ void buscar_animales(Lista<Animal>* lista_animales);
 void agregar_nodo_a_lista(Lista<Animal>* lista_animales, string nombre, string edad_str, string tamanio_str, string especie_str, string personalidad_str);
 
 void rescatar_animales(Lista<Animal>* lista_animales);
+
+string devolver_especie_palabra_completa(string inicial);

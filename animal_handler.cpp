@@ -160,10 +160,25 @@ void agregar_nodo_a_lista(Lista<Animal>* lista_animales, string nombre, string e
 
 void listar_animales(Lista<Animal>* lista_animales) {
 
+    string inicial_de_especie;
+
+    //nombre, edad, tamaño, especie en forma completa , personalidad, hambre e higiene.
     cout << "Animales en la Reserva:" << endl;
 
+    cout<<"\n \t(nombre, edad, tamaño, especie en forma completa , personalidad, hambre,higiene)\n"<<endl;
+
     for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
-        cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+
+        inicial_de_especie = lista_animales->obtener_actual_dato()->obtener_especie();
+
+       cout<<"\t-"<<lista_animales->obtener_actual_dato()->obtener_nombre();
+       cout<<","<<lista_animales->obtener_actual_dato()->obtener_edad();
+       cout<<","<<lista_animales->obtener_actual_dato()->obtener_tamanio();
+       cout<<","<<devolver_especie_palabra_completa(inicial_de_especie);
+       cout<<","<<lista_animales->obtener_actual_dato()->obtener_personalidad();
+       cout<<","<<lista_animales->obtener_actual_dato()->get_hambre();
+       cout<<","<<lista_animales->obtener_actual_dato()->get_higiene()<<"\n"<<endl;
+
 
         lista_animales->pasar_nodo();
     }
@@ -232,6 +247,38 @@ string elegir_especie()
     opcion_elegida = opcion_elegida - 1;
     return ESPECIES_STR[opcion_elegida];
 
+}
+
+string devolver_especie_palabra_completa(string inicial)
+{
+    if(inicial=="E")
+    {
+        return "Erizo";
+    }
+    else if(inicial=="G")
+    {
+        return "Gato";
+    }
+    else if(inicial=="L")
+    {
+        return "Lagartija";
+    }
+    else if(inicial=="P")
+    {
+        return "Perro";
+    }
+    else if(inicial=="R")
+    {
+        return "Roedor";
+    }
+    else if(inicial=="C")
+    {
+        return "Caballo";
+    }
+    else if(inicial=="O")
+    {
+        return "Conejo";
+    }
 }
 
 string elegir_personalidad()
@@ -318,7 +365,7 @@ string ingresar_edad()
 
 void rescatar_animales(Lista<Animal>* lista_animales)
 {
-    //edad, tamaño, especie y personalidad)
+
     string nombre_animal;
 
     string edad;
@@ -329,36 +376,51 @@ void rescatar_animales(Lista<Animal>* lista_animales)
 
     string personalidad;
 
-    int salir = 0;
+
 
     cin.ignore();
+    int opcion =0;
+    bool salir = true;
 
     cout<<"Ingrese el nombre del animal que desea rescatar: ";
     getline(cin,nombre_animal);
 
 
 
-    if(verificar_nombre(lista_animales,nombre_animal))
-    {
-        cout<<"El nombre ingresado ya existe"<<endl;
-        cout<<"Si desea salir ingrese [1], \nsi desea ingresar el nombre de otro animal ingrese [0]"<<endl;
-        cout<<"Ingrese una opcion: ";
-        cin>>salir;
+    while(salir){
+         if(verificar_nombre(lista_animales,nombre_animal)== false)
+        {
+            edad = ingresar_edad();
 
+            tamanio = elegir_tamanio();
 
+            especie = elegir_especie();
+
+            personalidad = elegir_personalidad();
+
+            agregar_nodo_a_lista(lista_animales,nombre_animal,edad,tamanio,especie,personalidad);
+
+            salir = false;
+
+        }
+        else
+        {
+            cout<<"El nombre ingresado ya existe"<<endl;
+            cout<<"Si desea salir ingrese [1], \nsi desea ingresar el nombre de otro animal ingrese [2]"<<endl;
+            cout<<"Ingrese una opcion: ";
+            cin>>opcion;
+
+            if(opcion == 1){
+                salir = false;
+            }
+            else{
+                    cin.ignore();
+                    cout<<"Ingrese el nombre del animal que desea rescatar: ";
+                    getline(cin,nombre_animal);
+            }
+        }
     }
-    else
-    {
-        edad = ingresar_edad();
 
-        tamanio = elegir_tamanio();
-
-        especie = elegir_especie();
-
-        personalidad = elegir_personalidad();
-
-        agregar_nodo_a_lista(lista_animales,nombre_animal,edad,tamanio,especie,personalidad);
-    }
 
 }
 
@@ -368,6 +430,8 @@ void buscar_animales(Lista<Animal>* lista_animales)
 {
     string nombre_ingresado;
 
+    string inicial_especie;
+
     cin.ignore();
     //getline(cin,titulo_nuevo_libro);
     cout<<"Ingrese el nombre del animal que desea buscar: ";
@@ -376,13 +440,16 @@ void buscar_animales(Lista<Animal>* lista_animales)
     if(verificar_nombre(lista_animales,nombre_ingresado))
     {
         for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
+
         if(lista_animales->obtener_actual_dato()->obtener_nombre() == nombre_ingresado)
         {
-            cout << "\t Nombre -" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
-            cout << "\t Edad -" << lista_animales->obtener_actual_dato()->obtener_edad() << endl;
-            cout << "\t Tamaño -" << lista_animales->obtener_actual_dato()->obtener_tamanio() << endl;
-            cout << "\t Especie -" << lista_animales->obtener_actual_dato()->obtener_especie() << endl;
-            //cout << "\t Personalidad -" << lista_animales->obtener_actual_dato()->obtener_personalidad() << endl;
+            inicial_especie =  lista_animales->obtener_actual_dato()->obtener_especie();
+
+            cout << "\t Nombre: " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+            cout << "\t Edad: " << lista_animales->obtener_actual_dato()->obtener_edad() << endl;
+            cout << "\t Tamaño: " << lista_animales->obtener_actual_dato()->obtener_tamanio() << endl;
+            cout << "\t Especie: " << devolver_especie_palabra_completa(inicial_especie) << endl;
+            cout << "\t Personalidad: " << lista_animales->obtener_actual_dato()->obtener_personalidad() << endl;
 
         }
         lista_animales->pasar_nodo();
@@ -394,7 +461,7 @@ void buscar_animales(Lista<Animal>* lista_animales)
     }
     else
     {
-        cout<<"El nombre ingresado no existe "<<endl;
+        cout<<"ERROR: El nombre ingresado no existe "<<endl;
     }
 
 

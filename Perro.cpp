@@ -6,20 +6,22 @@ using namespace std;
 
 
 
-Perro:: Perro(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad) : Animal(_nombre,_edad,_tamanio,_especie)
+Perro:: Perro(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad) : Animal(_nombre,_edad,_tamanio,_especie,_personalidad)
 {
 
-    personalidad = _personalidad;
+
 }
 
 void Perro::ensuciar()
 {
+    string personalidad_obtenida;
+    personalidad_obtenida = obtener_personalidad();
 
-    if (personalidad=="Sociable")
+    if (personalidad_obtenida =="Sociable")
     {
         higiene = higiene - 5;
     }
-    else if (personalidad == "Travieso")
+    else if (personalidad_obtenida == "Travieso")
     {
         higiene = higiene + 20;
     }
@@ -32,11 +34,14 @@ void Perro::ensuciar()
 
 void Perro ::gastar_energia()
 {
-    if (personalidad == "Dormilon")
+    string personalidad_obtenida;
+    personalidad_obtenida = obtener_personalidad();
+
+    if (personalidad_obtenida == "Dormilon")
     {
         hambre = hambre + 5;
     }
-    else if (personalidad == "Jugueton")
+    else if (personalidad_obtenida == "Jugueton")
     {
         hambre = hambre + 20;
     }
@@ -44,10 +49,5 @@ void Perro ::gastar_energia()
     {
         Animal::gastar_energia();
     }
-}
-
-string Perro::obtener_personalidad()
-{
-    return personalidad;
 }
 

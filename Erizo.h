@@ -6,8 +6,7 @@
 
 class Erizo : public Animal
 {
-   private:
-        string personalidad;
+
     public:
         Erizo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
         void set_erizo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);

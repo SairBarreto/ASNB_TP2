@@ -1,8 +1,8 @@
 #include "Caballo.h"
 
-Caballo::Caballo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad): Animal(_nombre,_edad,_tamanio,_especie)
+Caballo::Caballo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad): Animal(_nombre,_edad,_tamanio,_especie,_personalidad)
 {
-    personalidad = _personalidad;
+
 }
 
 /*void Caballo::set_caballo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)
@@ -12,11 +12,14 @@ Caballo::Caballo(string _nombre, int _edad, string _tamanio, string _especie, st
 */
 void Caballo::ensuciar()
 {
-        if (personalidad=="Sociable")
+    string personalidad_obtenida;
+    personalidad_obtenida = obtener_personalidad();
+
+        if (personalidad_obtenida=="Sociable")
     {
         higiene = higiene - 5;
     }
-    else if (personalidad == "Travieso")
+    else if (personalidad_obtenida == "Travieso")
     {
         higiene = higiene + 20;
     }
@@ -30,11 +33,14 @@ void Caballo::ensuciar()
 
 void Caballo::gastar_energia()
 {
-    if (personalidad == "Dormilon")
+    string personalidad_obtenida;
+    personalidad_obtenida = obtener_personalidad();
+
+    if (personalidad_obtenida == "Dormilon")
     {
         hambre = hambre + 5;
     }
-    else if (personalidad == "Jugueton")
+    else if (personalidad_obtenida == "Jugueton")
     {
         hambre = hambre + 20;
     }

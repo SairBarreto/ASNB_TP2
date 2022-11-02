@@ -6,8 +6,7 @@
 
 class Conejo : public Animal
 {
-    private:
-        string personalidad;
+
     public:
         Conejo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
         void set_conejo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
