@@ -59,7 +59,7 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
     switch(opcion){
         case LISTAR_ANIMALES:
             listar_animales(lista_animales);
-            system("pause");
+            //system("pause");
             break;
         case RESCATAR_ANIMAL:
             system("pause");
@@ -68,15 +68,15 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             system("pause");
             break;
         case CUIDAR_ANIMAL:
-            int opcion_2;
+            //int opcion_2;
             mostrar_menu_2();
-            opcion_2 = menu_pedir_opcion();
-            verificar_opcion_2(opcion_2);
-            system("pause");
+            //opcion_2 = menu_pedir_opcion();
+            //verificar_opcion_2(opcion_2);
+            //system("pause");
             break;
         case ADOPTAR_ANIMAL:
             adoptar_animal(lista_animales);
-            system("pause");
+            //system("pause");
             break;
         case SALIR:
             system("pause");

@@ -12,7 +12,8 @@ enum{
     BUSCAR_ANIMAL,
     CUIDAR_ANIMAL,
     ADOPTAR_ANIMAL,
-    SALIR
+    SALIR,
+    CANTIDAD_DE_OPCIONES
 };
 
 enum{
