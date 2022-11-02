@@ -8,6 +8,7 @@
 #include "Lagartija.h"
 #include "Perro.h"
 #include "Roedor.h"
+#include "menu.h"
 
 
 using namespace std;
@@ -130,7 +131,7 @@ void animales_paso_del_tiempo(Lista<Animal>* lista_animales) {
     }
     lista_animales->iniciar_nodo_actual();
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void adoptar_animal(Lista<Animal>* lista_animales){
     int metros_cuadrados = 0;
     string nombre_buscado; 
@@ -140,8 +141,9 @@ void adoptar_animal(Lista<Animal>* lista_animales){
     mostrar_animales_en_adopcion(lista_animales, metros_cuadrados);
    
     cout << "¿Cual desea adoptar? Ingrese su nombre: ";
-    fflush(stdin);
-    getline(cin >> ws, nombre_buscado);
+    nombre_buscado = elegir_nombre();
+    //fflush(stdin);
+    //getline(cin >> ws, nombre_buscado);
     //cin >> nombre_buscado;
     bool existe_nombre = false;
     //cout << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
@@ -209,4 +211,116 @@ int string_a_tamanio(string tamanio) {
             espacio_minimo = TAMANIOS[i].min;
     }
     return espacio_minimo;
+}
+
+//Cosas para el Manu 2
+//Funciona
+void alimentar_todos_animales(Lista<Animal>* lista_animales)
+{
+    for(int i = 0; i < lista_animales->obtener_cantidad(); i++){
+        lista_animales->obtener_actual_dato()->hambre = 0;
+        lista_animales->pasar_nodo();
+    }
+
+    cout << "Se han Alimentado a todos los animales en la Reserva" << endl;
+    cout << endl << "---------------------------------------------------------" << endl << endl;
+
+    lista_animales->iniciar_nodo_actual();
+}
+//Funciona
+void banio_todos(Lista<Animal>* lista_animales)
+{
+    for(int i = 0; i < lista_animales->obtener_cantidad(); i++){
+        lista_animales->obtener_actual_dato()->higiene = 100;
+        lista_animales->pasar_nodo();
+    }
+
+    cout << "Se han Bañado a todos los animales de la Reserva" << endl;
+    cout << endl << "---------------------------------------------------------" << endl << endl;
+
+    lista_animales->iniciar_nodo_actual();
+}
+//Funciona
+void elegir_individualmente(Lista<Animal>* lista_animales)
+{
+    string nombre_buscado;
+    int opcion, i = 0;
+    bool encontrado = false;
+
+    nombre_buscado = elegir_nombre();
+
+    while(i < lista_animales->obtener_cantidad() && !encontrado){
+        if(lista_animales->obtener_actual_dato()->obtener_nombre() == nombre_buscado){
+            cout << endl;
+            cout << "Que quiere hacer con " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl << endl;
+            mostrar_menu_individual();
+            opcion = menu_pedir_opcion();
+            menu_validar_opcion_individual(opcion);
+            procesar_opcion_individual(opcion, lista_animales);
+            encontrado = true;
+        }
+        i++;
+        lista_animales->pasar_nodo();
+    }
+
+    if(encontrado == false){
+        cout << endl;
+        cout << "El nombre ingresado no se encuentra en la Reserva" << endl;
+        cout << endl << "---------------------------------------------------------" << endl << endl;
+    }
+
+    lista_animales->iniciar_nodo_actual();
+}
+
+void banio_individual(Lista<Animal>* lista_animales)
+{
+    char especie;
+    especie = lista_animales->obtener_actual_dato()->obtener_especie()[0];
+
+    switch (especie){
+        case 'G':
+            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es un Gato por lo que no necesita un baño" << endl;
+            break;
+        case 'R':
+            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es una Lagartija por lo que no necesita un baño" << endl;
+            break;
+        case 'L':
+            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es un Roedor por lo que no necesita un baño" << endl;
+            break;
+        default:
+            lista_animales->obtener_actual_dato()->higiene = 100;
+            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " a sido bañado" << endl;
+            break;
+    }
+    cout << endl << "---------------------------------------------------------" << endl << endl;
+}
+
+void comida_individual(Lista<Animal>* lista_animales)
+{
+    char especie;
+    lista_animales->obtener_actual_dato()->hambre = 0;
+    especie = lista_animales->obtener_actual_dato()->obtener_especie()[0];
+
+    switch (especie){
+        case 'P':
+            cout << "Se dio de comer Huesos a " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+            break;
+        case 'G':
+            cout << "Se dio de comer Atun a" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+            break;
+        case 'C':
+            cout << "Se dio de comer Manzanas a " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+            break;
+        case 'R':
+            cout << "Se dio de comer Queso a " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+            break;
+        case 'O':
+            cout << "Se dio de comer Lechuga a " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+            break;
+        case 'E':
+        case 'L':
+            cout << "Se dio de comer Insectos a " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
+            break;
+    }
+    cout << endl << "---------------------------------------------------------" << endl << endl;
 }

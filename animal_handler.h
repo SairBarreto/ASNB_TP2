@@ -53,7 +53,7 @@ void listar_animales(Lista<Animal>* listar_animales);
 
 especie_t string_a_especie_t(string especie);
 
-//Para la opcion 2
+//Para la opcion 5
 void adoptar_animal(Lista<Animal>* lista_animales);
 
 bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ingresado);
@@ -75,3 +75,14 @@ bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ing
 bool puede_vivir_en_espacio(Animal* animal, int metros_cuadrados);
 
 int string_a_tamanio(string tamanio);
+
+//Para la opcion 4
+void alimentar_todos_animales(Lista<Animal>* lista_animales);
+
+void banio_todos(Lista<Animal>* lista_animales);
+
+void elegir_individualmente(Lista<Animal>* lista_animales);
+
+void banio_individual(Lista<Animal>* lista_animales);
+
+void comida_individual(Lista<Animal>* lista_animales);

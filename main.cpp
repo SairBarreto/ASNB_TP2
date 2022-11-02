@@ -16,6 +16,7 @@ int main()
 
     mostrar_menu();
     opcion = menu_pedir_opcion();
+    menu_validar_opcion(opcion);
     
     while(opcion != SALIR) {
         procesar_opcion(opcion, lista_animales);
