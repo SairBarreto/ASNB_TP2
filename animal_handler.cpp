@@ -121,22 +121,25 @@ especie_t string_a_especie_t(string especie) {
     }
     return (especie_t) posicion;
 }
-
+//////////////////////////////////////////////////////////////////////////
 void adoptar_animal(Lista<Animal>* lista_animales){
     int metros_cuadrados = 0;
     string nombre_buscado; 
-    cout << "Ingrese cantidad de metros cuadrados disponibles:" << endl;
+    cout << "Ingrese cantidad de metros cuadrados disponibles: ";
     cin >> metros_cuadrados;
 
     mostrar_animales_en_adopcion(lista_animales, metros_cuadrados);
    
-    cout << "¿Cual desea adoptar? Ingrese su nombre: " << endl;
-    cin >> nombre_buscado;
-    bool existe_nombre;
+    cout << "¿Cual desea adoptar? Ingrese su nombre: ";
+    fflush(stdin);
+    getline(cin, nombre_buscado);
+    //cin >> nombre_buscado;
+    bool existe_nombre = false;
     //cout << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
-    existe_nombre = verificar_animal_a_adoptar(lista_animales, nombre_buscado);
-    if(!existe_nombre){
-        cout << "No existe animal con ese nombre en la lista. Vuelva a intentarlo." << endl;}
+    //existe_nombre = verificar_animal_a_adoptar(lista_animales, nombre_buscado);
+    /*if(!existe_nombre){
+        cout << "No existe animal con ese nombre en la lista. Vuelva a intentarlo." << endl;
+    }
     else{
         for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
             if(nombre_buscado == lista_animales->obtener_actual_dato()->obtener_nombre())
@@ -144,12 +147,33 @@ void adoptar_animal(Lista<Animal>* lista_animales){
             lista_animales->pasar_nodo();
         }
         cout << "Felicidades usted adopto a " << nombre_buscado << endl;
-    }
-    lista_animales->iniciar_nodo_actual();
- }
+    }*/
+    int i = 0;
 
- void mostrar_animales_en_adopcion(Lista<Animal>* lista_animales, int metros_cuadrados){    
+    while(i < lista_animales->obtener_cantidad() && !existe_nombre){
+        if(nombre_buscado == lista_animales->obtener_actual_dato()->obtener_nombre()){
+            lista_animales->borrar_nodo_actual();
+            cout << endl;
+            cout << "Felicidades usted adopto a " << nombre_buscado << endl;
+            cout << endl << "---------------------------------------------------------" << endl << endl;
+            existe_nombre = true;
+        }
+        i++;
+        lista_animales->pasar_nodo();  
+    }
+
+    if(existe_nombre == false){
+        cout << endl;
+        cout << nombre_buscado << " no se encuentra en la Reserva" << endl;
+        cout << endl << "---------------------------------------------------------" << endl << endl;
+    }
+
+    lista_animales->iniciar_nodo_actual();
+}
+
+void mostrar_animales_en_adopcion(Lista<Animal>* lista_animales, int metros_cuadrados){    
     
+    cout << endl;
     for(int i=0;i<lista_animales->obtener_cantidad(); i++){
         if(puede_vivir_en_espacio(lista_animales->obtener_actual_dato(), metros_cuadrados)){ 
         cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
@@ -158,9 +182,9 @@ void adoptar_animal(Lista<Animal>* lista_animales){
     }
     cout << endl;
     lista_animales->iniciar_nodo_actual(); //vuelve al nodo inicial
- }
-
- bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ingresado){
+}
+/*
+bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ingresado){
     bool existe_nombre = false;
 
     for(int i=0; i<lista_animales->obtener_cantidad(); i++){
@@ -171,8 +195,8 @@ void adoptar_animal(Lista<Animal>* lista_animales){
     }
     lista_animales->iniciar_nodo_actual();
     return existe_nombre;
- }
-
+}
+*/
 bool puede_vivir_en_espacio(Animal* animal, int metros_cuadrados) {
     int minimo = string_a_tamanio(animal->obtener_tamanio());
     if(metros_cuadrados >= minimo)
