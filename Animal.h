@@ -6,7 +6,7 @@ using namespace std;
 //nombre,edad,tama�o,especie,personalidad
 class Animal
 {
-    private:
+    protected:
         string nombre;
         int edad;
         string tamanio;
@@ -24,12 +24,14 @@ class Animal
         int hambre;
         int higiene;
         string obtener_nombre();
-        int obtener_edad();
-        string obtener_tamanio();
-        string obtener_especie();
-        string obtener_personalidad();
-
+        int obtener_higiene();  
+        int obtener_hambre();
+        string obtener_personalidad(); 
         virtual ~Animal(){};
+        //Para la opcion 4
+        string obtener_tamanio();
+        int obtener_edad();
+        string obtener_especie();
 
 
 };

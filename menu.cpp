@@ -1,11 +1,26 @@
 #include <iostream>
 #include "menu.h"
-#include "Lista.h"
-#include "animal_handler.h"
+#include "animal_handler.h" //Agregue esto para probar la primera opcion
 
 using namespace std;
 
+/* Esto ya esta en el menu.h no es necesario declararlo de nuevo
+enum{
+    LISTAR_ANIMALES = 1,
+    RESCATAR_ANIMAL,
+    BUSCAR_ANIMAL,
+    CUIDAR_ANIMAL,
+    ADOPTAR_ANIMAL,
+    GUARDAR_SALIR
+};
 
+enum{
+    ELEGIR_INDIVIDUALMENTE = 1,
+    ALIMENTAR_TODOS,
+    BANIO_TODOS,
+    REGRESAR_INICIO
+};
+*/
 void mostrar_menu()
 {
     cout << endl;
@@ -28,14 +43,27 @@ int menu_pedir_opcion(){
     return opcion;
 }
 
-void menu_validar_opcion(int &opcion){
-    bool es_opcion_valida = opcion > 0 && opcion <= CANTIDAD_DE_OPCIONES;
+string elegir_nombre()
+{
+    string nombre;
+    string buffer;
+    cout << "Ingrese el nombre del animal: ";
+    fflush(stdin);
+    getline(cin, nombre);
+
+    return nombre;
+}
+
+void menu_validar_opcion(int &opcion)
+{
+    bool es_opcion_valida = opcion > 0 && opcion <= SALIR;
     string buffer;
     while(!es_opcion_valida){
         cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
         getline(cin >> ws,buffer);
         opcion = stoi(buffer);
-        es_opcion_valida = opcion > 0 && opcion <= CANTIDAD_DE_OPCIONES;
+        es_opcion_valida = opcion > 0 && opcion <= SALIR;
+        cout << endl << "---------------------------------------------------------" << endl << endl;
     }
 }
 
@@ -55,14 +83,11 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             //system("pause");
             break;
         case CUIDAR_ANIMAL:
-            int opcion_2;
-            mostrar_menu_2();
-            opcion_2 = menu_pedir_opcion();
-            verificar_opcion_2(opcion_2);
-            system("pause");
+            opcion_4(lista_animales);
             break;
         case ADOPTAR_ANIMAL:
-            system("pause");
+            adoptar_animal(lista_animales);
+            //system("pause");
             break;
         case SALIR:
             system("pause");
@@ -70,41 +95,99 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
     }
 }
 
-
-
-void mostrar_menu_2()
+void opcion_4(Lista<Animal>* lista_animales)
 {
-    cout << "\tMenu" << endl;
-    cout << "1.Elegir individualmente" << endl;
-    cout << "2.Alimentar a todos" << endl;
-    cout << "3.Bañar a todos" << endl;
-    cout << "4.Regresar al inicio" << endl;
+    int opcion_2;
+    mostrar_menu_2();
+    opcion_2 = menu_pedir_opcion();
+    menu_validar_opcion_2(opcion_2);
 
-
-}
-
-void verificar_opcion_2(int opcion_2)
-{
-    while(opcion_2 < 1 || opcion_2 > 4){
-        cout << "Eliga una opcion correcta: ";
-        cin >> opcion_2;
+    while(opcion_2 != REGRESAR_INICIO){
+        procesar_opcion_2(opcion_2, lista_animales);
+        system("cls");
+        mostrar_menu_2();
+        opcion_2 = menu_pedir_opcion();
+        menu_validar_opcion_2(opcion_2);
     }
 }
 
-void procesar_opcion_2(int opcion)
+void mostrar_menu_2()
 {
-    switch(opcion){
+    cout << endl;
+    cout << "---------------------------------------------------------" << endl << endl;
+    cout << "Menu para el Cuidado de los Animales" << endl << endl;
+    cout << "\t 1.Elegir individualmente" << endl;
+    cout << "\t 2.Alimentar a todos" << endl;
+    cout << "\t 3.Bañar a todos" << endl;
+    cout << "\t 4.Regresar al inicio" << endl;
+    cout << endl;
+}
+
+void menu_validar_opcion_2(int &opcion_2){
+    bool es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
+    string buffer;
+    while(!es_opcion_valida){
+        cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
+        getline(cin >> ws,buffer);
+        opcion_2 = stoi(buffer);
+        es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
+        cout << endl << "---------------------------------------------------------" << endl << endl;
+    }
+}
+
+void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales)
+{
+    switch(opcion_2){
         case ELEGIR_INDIVIDUALMENTE:
+            elegir_individualmente(lista_animales);
             system("pause");
             break;
         case ALIMENTAR_TODOS:
+            alimentar_todos_animales(lista_animales);
             system("pause");
             break;
         case BANIO_TODOS:
+            banio_todos(lista_animales);
             system("pause");
             break;
         case REGRESAR_INICIO:
+            break;
+    }
+}
+
+void mostrar_menu_individual()
+{
+    cout << "1.Bañarlo" << endl;
+    cout << "2.Alimentar" << endl;
+    cout << "3.Volver al menu" << endl;
+    cout << endl;
+}
+
+void menu_validar_opcion_individual(int &opcion)
+{
+    bool es_opcion_valida = opcion > 0 && opcion <= 3;
+    string buffer;
+    while(!es_opcion_valida){
+        cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
+        getline(cin >> ws,buffer);
+        opcion = stoi(buffer);
+        es_opcion_valida = opcion > 0 && opcion <= 3;
+        cout << endl << "---------------------------------------------------------" << endl << endl;
+    }
+}
+
+void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales)
+{
+    switch (opcion){
+        case 1:
+            banio_individual(lista_animales);
             system("pause");
+            break;
+        case 2:
+            comida_individual(lista_animales);
+            system("pause");
+            break;
+        case 3:
             break;
     }
 }

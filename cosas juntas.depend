@@ -1,0 +1,105 @@
+# depslib dependency file v1.0
+1667425493 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\animal.cpp
+	"Animal.h"
+	<iostream>
+
+1667425427 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\animal.h
+	<iostream>
+
+1667425414 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\animal_handler.cpp
+	<iostream>
+	<fstream>
+	"animal_handler.h"
+	"Caballo.h"
+	"Conejo.h"
+	"Erizo.h"
+	"Gato.h"
+	"Lagartija.h"
+	"Perro.h"
+	"Roedor.h"
+	"menu.h"
+
+1667425424 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\animal_handler.h
+	<iostream>
+	"Lista.h"
+	"Animal.h"
+
+1667421834 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\lista.h
+	"Nodo.h"
+
+1667421834 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\nodo.h
+	<iostream>
+
+1667425433 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\caballo.h
+	"Animal.h"
+
+1667425445 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\conejo.h
+	"Animal.h"
+
+1667425451 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\erizo.h
+	"Animal.h"
+
+1667425462 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\gato.h
+	"Animal.h"
+	<iostream>
+
+1667425468 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\lagartija.h
+	"Animal.h"
+
+1667425478 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\perro.h
+	"Animal.h"
+	<iostream>
+
+1667425491 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\roedor.h
+	"Animal.h"
+
+1667421834 c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\menu.h
+	<iostream>
+	"Lista.h"
+	"Animal.h"
+
+1667425430 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\caballo.cpp
+	"Caballo.h"
+
+1667425442 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\conejo.cpp
+	"Conejo.h"
+
+1667425448 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\erizo.cpp
+	"Erizo.h"
+
+1667421834 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\funciones.cpp
+	<string>
+	<fstream>
+	"lista.h"
+	"Animal.h"
+
+1667425459 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\gato.cpp
+	"Gato.h"
+
+1667425465 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\lagartija.cpp
+	"Lagartija.h"
+
+1667421834 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\lista.cpp
+
+1667421834 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\main.cpp
+	<iostream>
+	"Lista.h"
+	"Animal.h"
+	"animal_handler.h"
+	"menu.h"
+
+1667421834 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\nodo.cpp
+	"Nodo.h"
+
+1667425475 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\perro.cpp
+	"Perro.h"
+	<iostream>
+
+1667425481 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\roedor.cpp
+	"Roedor.h"
+
+1667425944 source:c:\users\anton\onedrive\escritorio\tp 2 el real\solo para el main\asnb_tp2\cosas juntas\menu.cpp
+	<iostream>
+	"menu.h"
+	"animal_handler.h"
+

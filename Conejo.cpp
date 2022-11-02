@@ -2,7 +2,7 @@
 
 Conejo::Conejo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad):Animal(_nombre,_edad,_tamanio,_especie,_personalidad)
 {
-
+    
 }
 
 /*void Conejo::set_conejo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)
@@ -12,15 +12,22 @@ Conejo::Conejo(string _nombre, int _edad, string _tamanio, string _especie, stri
 
 void Conejo::gastar_energia()
 {
-    string personalidad_obtenida;
-    personalidad_obtenida = obtener_personalidad();
-     if (personalidad_obtenida == "Dormilon")
+    int nuevo_hambre;
+    if (personalidad == "Dormilon")
     {
-        hambre = hambre + 5;
+        nuevo_hambre = hambre + 5;
+        if(nuevo_hambre >= 100)
+            hambre = 100;
+        else
+            hambre = nuevo_hambre;
     }
-    else if (personalidad_obtenida == "Jugueton")
+    else if (personalidad == "Jugueton")
     {
-        hambre = hambre + 20;
+        nuevo_hambre = hambre + 20;
+        if(nuevo_hambre >= 100)
+            hambre = 100;
+        else
+            hambre = nuevo_hambre;
     }
     else
     {
@@ -30,21 +37,25 @@ void Conejo::gastar_energia()
 
 void Conejo::ensuciar()
 {
-    string personalidad_obtenida;
-    personalidad_obtenida = obtener_personalidad();
-
-    if (personalidad_obtenida == "Sociable")
+    int nuevo_higiene;
+    if (personalidad=="Sociable")
     {
-        higiene = higiene - 5;
+        nuevo_higiene = higiene - 5;
+        if(nuevo_higiene <= 0)
+            higiene = 0;
+        else
+            higiene = nuevo_higiene;
     }
-    else if (personalidad_obtenida == "Travieso")
+    else if (personalidad == "Travieso")
     {
-        higiene = higiene + 20;
+        nuevo_higiene = higiene + 20;
+        if(nuevo_higiene <= 0)
+            higiene = 0;
+        else
+            higiene = nuevo_higiene;
     }
     else
     {
-
         Animal::ensuciar();
     }
-
 }

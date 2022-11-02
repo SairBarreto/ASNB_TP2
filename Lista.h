@@ -108,6 +108,7 @@ void Lista<Dato>::borrar_nodo_actual() {
         nodo_anterior->cambiar_siguiente_nodo(nodo_actual->obtener_siguiente_nodo());
         delete nodo_actual;
     }
+    cantidad--;
     iniciar_nodo_actual();
 }
 
