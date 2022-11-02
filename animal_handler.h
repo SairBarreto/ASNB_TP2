@@ -19,7 +19,7 @@ const tamanio_t TAMANIOS[5] = {
     {"gigante",50}
 };
 
-const int CANTIDAD_TAMANIOS = 6;
+const int CANTIDAD_TAMANIOS = 5;
 
 
 enum especie_t {
@@ -56,9 +56,9 @@ especie_t string_a_especie_t(string especie);
 //Para la opcion 5
 void adoptar_animal(Lista<Animal>* lista_animales);
 
-bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ingresado);
-
 void mostrar_animales_en_adopcion(Lista<Animal>* lista_animales, int metros_cuadrados);
+
+bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ingresado);
 
 bool puede_vivir_en_espacio(Animal* animal, int metros_cuadrados);
 

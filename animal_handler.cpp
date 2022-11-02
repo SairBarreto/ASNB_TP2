@@ -147,10 +147,9 @@ void adoptar_animal(Lista<Animal>* lista_animales){
     //cin >> nombre_buscado;
     bool existe_nombre = false;
     //cout << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
-    //existe_nombre = verificar_animal_a_adoptar(lista_animales, nombre_buscado);
-    /*if(!existe_nombre){
-        cout << "No existe animal con ese nombre en la lista. Vuelva a intentarlo." << endl;
-    }
+    existe_nombre = verificar_animal_a_adoptar(lista_animales, nombre_buscado);
+    if(!existe_nombre){
+        cout << "No existe animal con ese nombre en la lista. Vuelva a intentarlo." << endl;}
     else{
         for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
             if(nombre_buscado == lista_animales->obtener_actual_dato()->obtener_nombre())

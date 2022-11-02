@@ -101,14 +101,16 @@ void Lista<Dato>::borrar_nodo_actual() {
     //nodo actual es el primero
     if(nodo_actual == nodo_primero) {
         nodo_primero = nodo_primero->obtener_siguiente_nodo();
+        cantidad--; 
         delete nodo_actual;
     }
     //nodo actual no es el primero
     else {
         nodo_anterior->cambiar_siguiente_nodo(nodo_actual->obtener_siguiente_nodo());
+        cantidad--;
         delete nodo_actual;
     }
-    cantidad--;
+    //cantidad--; //
     iniciar_nodo_actual();
 }
 
