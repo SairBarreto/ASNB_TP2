@@ -20,7 +20,7 @@ int main()
     
     while(opcion != SALIR) {
         procesar_opcion(opcion, lista_animales);
-        //system("cls");
+        system("cls");
         mostrar_menu();
         opcion = menu_pedir_opcion();
         menu_validar_opcion(opcion);

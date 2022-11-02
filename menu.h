@@ -24,22 +24,24 @@ void mostrar_menu();
 
 int menu_pedir_opcion();
 
+string elegir_nombre();
+
 void menu_validar_opcion(int &opcion);
 
 void procesar_opcion(int opcion, Lista<Animal>* lista_animales);
+//Para la opcion 4
+void opcion_4(Lista<Animal>* lista_animales);
 
 void mostrar_menu_2();
 
 void menu_validar_opcion_2(int &opcion_2);
 
 void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales);
-//Para la opcion 4
+
 void mostrar_menu_individual();
 
-string elegir_nombre();
-
-void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales, int &posicion, string nombre_busacdo);
-
 void menu_validar_opcion_individual(int &opcion);
+
+void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales);
 
 #endif

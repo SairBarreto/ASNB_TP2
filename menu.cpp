@@ -20,7 +20,8 @@ void mostrar_menu()
     cout << endl;
 }
 
-int menu_pedir_opcion(){
+int menu_pedir_opcion()
+{
     int opcion;
     cout << "Ingrese el número de su acción elegida : ";
     cin >> opcion;
@@ -28,22 +29,31 @@ int menu_pedir_opcion(){
     return opcion;
 }
 
-void menu_validar_opcion(int &opcion){
-    //bool es_opcion_valida = opcion > 0 && opcion <= SALIR;
+string elegir_nombre()
+{
+    string nombre;
+    cout << "Ingrese el nombre del animal: ";
+    fflush(stdin);
+    getline(cin, nombre);
+
+    return nombre;
+}
+
+void menu_validar_opcion(int &opcion)
+{
+    bool es_opcion_valida = opcion > 0 && opcion <= SALIR;
     string buffer;
-    while(opcion < LISTAR_ANIMALES || opcion > SALIR){
+    while(!es_opcion_valida){
         cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
-        cin >> opcion;
+        getline(cin >> ws,buffer);
+        opcion = stoi(buffer);
+        es_opcion_valida = opcion > 0 && opcion <= SALIR;
         cout << endl << "---------------------------------------------------------" << endl << endl;
-        //getline(cin >> ws,buffer);
-        //opcion = stoi(buffer);
-        //es_opcion_valida = opcion > 0 && opcion <= SALIR;
     }
 }
 
 void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
 {
-    //int opcion_2;
     switch(opcion){
         case LISTAR_ANIMALES:
             listar_animales(lista_animales);
@@ -56,27 +66,29 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             system("pause");
             break;
         case CUIDAR_ANIMAL:
-            int opcion_2;
-            mostrar_menu_2();
-            opcion_2 = menu_pedir_opcion();
-            menu_validar_opcion_2(opcion_2);
-            procesar_opcion_2(opcion_2, lista_animales);
-            /*
-            while(opcion != REGRESAR_INICIO){
-                procesar_opcion_2(opcion_2, lista_animales);
-                //system("cls");
-                mostrar_menu_2();
-                opcion_2 = menu_pedir_opcion();
-                menu_validar_opcion_2(opcion_2);
-            }*/
-            system("pause");
+            opcion_4(lista_animales);
             break;
         case ADOPTAR_ANIMAL:
             system("pause");
             break;
         case SALIR:
-            system("pause");
             break;
+    }
+}
+
+void opcion_4(Lista<Animal>* lista_animales)
+{
+    int opcion_2;
+    mostrar_menu_2();
+    opcion_2 = menu_pedir_opcion();
+    menu_validar_opcion_2(opcion_2);
+
+    while(opcion_2 != REGRESAR_INICIO){
+        procesar_opcion_2(opcion_2, lista_animales);
+        system("cls");
+        mostrar_menu_2();
+        opcion_2 = menu_pedir_opcion();
+        menu_validar_opcion_2(opcion_2);
     }
 }
 
@@ -93,15 +105,14 @@ void mostrar_menu_2()
 }
 
 void menu_validar_opcion_2(int &opcion_2){
-    //bool es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
-    //string buffer;
-    while(opcion_2 < ELEGIR_INDIVIDUALMENTE || opcion_2 > REGRESAR_INICIO){
+    bool es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
+    string buffer;
+    while(!es_opcion_valida){
         cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
-        cin >> opcion_2;
+        getline(cin >> ws,buffer);
+        opcion_2 = stoi(buffer);
+        es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
         cout << endl << "---------------------------------------------------------" << endl << endl;
-        //getline(cin >> ws,buffer);
-        //opcion_2 = stoi(buffer);
-        //es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
     }
 }
 
@@ -109,61 +120,53 @@ void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales)
 {
     switch(opcion_2){
         case ELEGIR_INDIVIDUALMENTE:
+            elegir_individualmente(lista_animales);
             system("pause");
             break;
         case ALIMENTAR_TODOS:
             alimentar_todos_animales(lista_animales);
-            //system("pause");
+            system("pause");
             break;
         case BANIO_TODOS:
             banio_todos(lista_animales);
-            //system("pause");
+            system("pause");
             break;
         case REGRESAR_INICIO:
             break;
     }
 }
-//Para la opcion 4
+
 void mostrar_menu_individual()
 {
     cout << "1.Bañarlo" << endl;
     cout << "2.Alimentar" << endl;
     cout << "3.Volver al menu" << endl;
+    cout << endl;
 }
 
 void menu_validar_opcion_individual(int &opcion)
 {
-    //bool es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
-    //string buffer;
-    while(opcion < 1 || opcion > 3){
+    bool es_opcion_valida = opcion > 0 && opcion <= 3;
+    string buffer;
+    while(!es_opcion_valida){
         cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
-        cin >> opcion;
+        getline(cin >> ws,buffer);
+        opcion = stoi(buffer);
+        es_opcion_valida = opcion > 0 && opcion <= 3;
         cout << endl << "---------------------------------------------------------" << endl << endl;
-        //getline(cin >> ws,buffer);
-        //opcion_2 = stoi(buffer);
-        //es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
     }
 }
 
-string elegir_nombre()
-{
-    string nombre;
-    cout << endl;
-    cout << "Ingrese el nombre del animal: ";
-    fflush(stdin);
-    getline(cin, nombre);
-
-    return nombre;
-}
-
-void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales, int &posicion, string nombre_busacdo)
+void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales)
 {
     switch (opcion){
         case 1:
-            banio_individual(lista_animales, posicion, nombre_busacdo);
+            banio_individual(lista_animales);
+            system("pause");
             break;
         case 2:
-            comida_individual(lista_animales, posicion, nombre_busacdo);
+            comida_individual(lista_animales);
+            system("pause");
             break;
         case 3:
             break;

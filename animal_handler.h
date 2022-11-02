@@ -42,6 +42,6 @@ void banio_todos(Lista<Animal>* lista_animales);
 
 void elegir_individualmente(Lista<Animal>* lista_animales);
 
-void banio_individual(Lista<Animal>* lista_animales, int &posicion, string nombre_buscado);
+void banio_individual(Lista<Animal>* lista_animales);
 
-void comida_individual(Lista<Animal>* lista_animales, int &posicion, string nombre_buscado);
+void comida_individual(Lista<Animal>* lista_animales);
