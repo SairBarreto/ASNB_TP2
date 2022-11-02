@@ -22,6 +22,7 @@ int main()
         mostrar_menu();
         opcion = menu_pedir_opcion();
         menu_validar_opcion(opcion);
+        animales_paso_del_tiempo(lista_animales);
     }
 
     delete lista_animales;

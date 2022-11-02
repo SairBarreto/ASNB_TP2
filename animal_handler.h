@@ -36,3 +36,5 @@ void leer_archivo(Lista<Animal>* lista_animales);
 void listar_animales(Lista<Animal>* listar_animales);
 
 especie_t string_a_especie_t(string especie);
+
+void animales_paso_del_tiempo(Lista<Animal>* lista_animales);

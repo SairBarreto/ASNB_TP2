@@ -39,15 +39,31 @@ void Animal::alimentar()
 
 void Animal::gastar_energia()
 {
-
-    hambre = hambre + 10;
+    int nuevo_hambre = hambre + 10;
+    if(nuevo_hambre >= 100)
+        hambre = 100;
+    else
+        hambre = nuevo_hambre;
 }
 
 void Animal::ensuciar()
 {
-    higiene = higiene - 10;
+    int nuevo_higiene = higiene - 10;
+    if(nuevo_higiene <= 0)
+        higiene = 0;
+    else
+        higiene = nuevo_higiene;
 }
 
 string Animal::obtener_nombre() {
     return nombre;
+}
+
+
+int Animal::obtener_higiene() {
+    return higiene;
+}
+
+int Animal::obtener_hambre() {
+    return hambre;
 }
