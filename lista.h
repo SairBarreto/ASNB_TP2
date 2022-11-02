@@ -18,44 +18,44 @@ private:
 public:
 
     //PRE: -
-    //POS:
+    //POS: Constructor
     Lista();
 
-    //PRE: -
-    //POS:
+    //PRE: Debe existir una lista y Dato debe ser valido
+    //POS: Carga un nodo en la lista con los dato proporcionados y genera el siguiente en 0
     void agregar_nodo(Dato* dato);
 
     //PRE: -
-    //POS:
+    //POS: Obtiene el Dato del nodo actual de la lista
     Dato* obtener_actual_dato();
 
     //PRE: -
-    //POS:
+    //POS: Revisa si esta apuntando a nulo el nodo actual y retorna booleano
     bool es_nulo_nodo_actual();
 
     //PRE: -
-    //POS:
+    //POS: Puntero "Nodo anterior" pasa a apuntar a el valor del Nodo actual y puntero "Nodo actual" busca a el siguiente nodo
     void pasar_nodo();
 
     //PRE: -
-    //POS:
+    //POS: Borra nodo actual indipendientemente de la posicion e inicia nodo actual
     void borrar_nodo_actual();
 
     //PRE: -
-    //POS:
+    //POS: Retorna el primer nodo
     Nodo<Dato>* obtener_primer_nodo();
 
     //PRE: -
-    //POS:
+    //POS: Retorna la cantidad
     int obtener_cantidad();
 
 
     //PRE: -
-    //POS:
+    //POS: Nodo anterior nulo y Nodo actual primero
     void iniciar_nodo_actual();
 
     //PRE: -
-    //POS:
+    //POS: Destructor 
     ~Lista();
 
 };
