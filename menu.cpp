@@ -46,7 +46,6 @@ int menu_pedir_opcion(){
 string elegir_nombre()
 {
     string nombre;
-    string buffer;
     cout << "Ingrese el nombre del animal: ";
     fflush(stdin);
     getline(cin, nombre);
@@ -90,7 +89,7 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             //system("pause");
             break;
         case SALIR:
-            system("pause");
+            //system("pause");
             break;
     }
 }

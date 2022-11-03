@@ -55,7 +55,7 @@ const string PERSONALIDADES[4] =
 const string TAMANIOS_STR[5] =
 {
     "Diminuto",
-    "Pequeño",
+    "Pequeï¿½o",
     "Mediano",
     "Grande",
     "Gigante"
@@ -92,8 +92,6 @@ void adoptar_animal(Lista<Animal>* lista_animales);
 
 void mostrar_animales_en_adopcion(Lista<Animal>* lista_animales, int metros_cuadrados);
 
-bool verificar_animal_a_adoptar(Lista<Animal>* lista_animales, string nombre_ingresado);
-
 bool puede_vivir_en_espacio(Animal* animal, int metros_cuadrados);
 
 int string_a_tamanio(string tamanio);
@@ -120,3 +118,11 @@ void agregar_nodo_a_lista(Lista<Animal>* lista_animales, string nombre, string e
 void rescatar_animales(Lista<Animal>* lista_animales);
 
 string devolver_especie_palabra_completa(string inicial);
+
+string elegir_especie();
+
+string elegir_personalidad();
+
+string elegir_tamanio();
+
+string ingresar_edad();

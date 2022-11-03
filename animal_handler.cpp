@@ -641,10 +641,10 @@ void banio_individual(Lista<Animal>* lista_animales)
             cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es un Gato por lo que no necesita un baño" << endl;
             break;
         case 'R':
-            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es una Lagartija por lo que no necesita un baño" << endl;
+            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es una Roedor por lo que no necesita un baño" << endl;
             break;
         case 'L':
-            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es un Roedor por lo que no necesita un baño" << endl;
+            cout << lista_animales->obtener_actual_dato()->obtener_nombre() << " es un Lagartija por lo que no necesita un baño" << endl;
             break;
         default:
             lista_animales->obtener_actual_dato()->higiene = 100;
