@@ -11,10 +11,6 @@ class Caballo : public Animal
         Caballo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
         
         //PRE: -    
-        //POS: Carga y crea objeto Caballo
-        void set_caballo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
-        
-        //PRE: -    
         //POS: Disminuye higiene dependiendo de su personalidad
         void ensuciar();
 

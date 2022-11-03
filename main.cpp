@@ -14,18 +14,13 @@ int main()
 
     leer_archivo(lista_animales);
 
-    mostrar_menu();
-    opcion = menu_pedir_opcion();
-    menu_validar_opcion(opcion);
-    
-    while(opcion != SALIR) {
-        procesar_opcion(opcion, lista_animales);
+   do{
         mostrar_menu();
         opcion = menu_pedir_opcion();
         menu_validar_opcion(opcion);
-        animales_paso_del_tiempo(lista_animales);
-    }
-
+        procesar_opcion(opcion, lista_animales);
+    }while(opcion != SALIR);
+    
     delete lista_animales;
 
     return 0;

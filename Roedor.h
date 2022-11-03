@@ -9,10 +9,6 @@ class Roedor : public Animal
 
     public:
         Roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
-       
-        //PRE: -    
-        //POS: Crea y carga el onjeto Roedor
-        void set_roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
         
         //PRE: -    
         //POS: Aumenta hambre dependiendo de su personalidad

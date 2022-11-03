@@ -4,23 +4,6 @@
 
 using namespace std;
 
-/* Esto ya esta en el menu.h no es necesario declararlo de nuevo
-enum{
-    LISTAR_ANIMALES = 1,
-    RESCATAR_ANIMAL,
-    BUSCAR_ANIMAL,
-    CUIDAR_ANIMAL,
-    ADOPTAR_ANIMAL,
-    GUARDAR_SALIR
-};
-
-enum{
-    ELEGIR_INDIVIDUALMENTE = 1,
-    ALIMENTAR_TODOS,
-    BANIO_TODOS,
-    REGRESAR_INICIO
-};
-*/
 void mostrar_menu()
 {
     cout << endl;
@@ -47,8 +30,7 @@ string elegir_nombre()
 {
     string nombre;
     cout << "Ingrese el nombre del animal: ";
-    fflush(stdin);
-    getline(cin, nombre);
+    getline(cin >> ws, nombre);
 
     return nombre;
 }
@@ -57,6 +39,7 @@ void menu_validar_opcion(int &opcion)
 {
     bool es_opcion_valida = opcion > 0 && opcion <= SALIR;
     string buffer;
+
     while(!es_opcion_valida){
         cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
         getline(cin >> ws,buffer);
@@ -71,25 +54,27 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
     switch(opcion){
         case LISTAR_ANIMALES:
             listar_animales(lista_animales);
-            //system("pause");
+            animales_paso_del_tiempo(lista_animales);
             break;
         case RESCATAR_ANIMAL:
             rescatar_animales(lista_animales);
-            //system("pause");
+            animales_paso_del_tiempo(lista_animales);
             break;
         case BUSCAR_ANIMAL:
             buscar_animales(lista_animales);
-            //system("pause");
+            animales_paso_del_tiempo(lista_animales);
             break;
         case CUIDAR_ANIMAL:
             opcion_4(lista_animales);
+            animales_paso_del_tiempo(lista_animales);
             break;
         case ADOPTAR_ANIMAL:
             adoptar_animal(lista_animales);
-            //system("pause");
+            animales_paso_del_tiempo(lista_animales);
             break;
         case SALIR:
-            //system("pause");
+            guardar_y_salir(lista_animales);
+            animales_paso_del_tiempo(lista_animales);
             break;
     }
 }
@@ -97,17 +82,13 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
 void opcion_4(Lista<Animal>* lista_animales)
 {
     int opcion_2;
-    mostrar_menu_2();
-    opcion_2 = menu_pedir_opcion();
-    menu_validar_opcion_2(opcion_2);
 
-    while(opcion_2 != REGRESAR_INICIO){
-        procesar_opcion_2(opcion_2, lista_animales);
-        system("cls");
+    do{
         mostrar_menu_2();
         opcion_2 = menu_pedir_opcion();
         menu_validar_opcion_2(opcion_2);
-    }
+        procesar_opcion_2(opcion_2, lista_animales);
+    }while(opcion_2 != REGRESAR_INICIO);
 }
 
 void mostrar_menu_2()
@@ -125,6 +106,7 @@ void mostrar_menu_2()
 void menu_validar_opcion_2(int &opcion_2){
     bool es_opcion_valida = opcion_2 > 0 && opcion_2 <= REGRESAR_INICIO;
     string buffer;
+
     while(!es_opcion_valida){
         cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
         getline(cin >> ws,buffer);
@@ -139,15 +121,12 @@ void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales)
     switch(opcion_2){
         case ELEGIR_INDIVIDUALMENTE:
             elegir_individualmente(lista_animales);
-            system("pause");
             break;
         case ALIMENTAR_TODOS:
             alimentar_todos_animales(lista_animales);
-            system("pause");
             break;
         case BANIO_TODOS:
             banio_todos(lista_animales);
-            system("pause");
             break;
         case REGRESAR_INICIO:
             break;
@@ -166,6 +145,7 @@ void menu_validar_opcion_individual(int &opcion)
 {
     bool es_opcion_valida = opcion > 0 && opcion <= 3;
     string buffer;
+
     while(!es_opcion_valida){
         cout << "La opción elegida no es una opcion válida, por favor ingrese otra opción: ";
         getline(cin >> ws,buffer);
@@ -180,11 +160,9 @@ void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales)
     switch (opcion){
         case 1:
             banio_individual(lista_animales);
-            system("pause");
             break;
         case 2:
             comida_individual(lista_animales);
-            system("pause");
             break;
         case 3:
             break;

@@ -30,7 +30,6 @@ void Erizo::ensuciar()
     }
 }
 
-
 void Erizo::gastar_energia()
 {
     int nuevo_hambre;
@@ -55,5 +54,3 @@ void Erizo::gastar_energia()
         Animal::gastar_energia();
     }
 }
-
-

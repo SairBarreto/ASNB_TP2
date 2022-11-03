@@ -5,13 +5,6 @@ Roedor::Roedor(string _nombre, int _edad, string _tamanio, string _especie, stri
 
 }
 
-/*void Roedor::set_roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)
-{
-
-}
-*/
-
-
 void Roedor::gastar_energia()
 {
     int nuevo_hambre;

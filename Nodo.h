@@ -91,6 +91,4 @@ bool Nodo<Dato>::es_no_nulo_proximo_nulo() {
     return (siguiente != 0);
 }
 
-
-
 #endif // NODO_H_INCLUDED

@@ -5,11 +5,6 @@ Lagartija::Lagartija(string _nombre, int _edad, string _tamanio, string _especie
 
 }
 
-/*void Lagartija::set_roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)
-{
-
-}*/
-
 void Lagartija::gastar_energia()
 {
     int nuevo_hambre;
@@ -34,6 +29,5 @@ void Lagartija::gastar_energia()
         Animal::gastar_energia();
     }
 }
-
 
 void Lagartija::ensuciar() {}

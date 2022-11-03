@@ -5,11 +5,6 @@ Caballo::Caballo(string _nombre, int _edad, string _tamanio, string _especie, st
 
 }
 
-/*void Caballo::set_caballo(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)
-{
-
-}
-*/
 void Caballo::ensuciar()
 {
     int nuevo_higiene;
@@ -34,7 +29,6 @@ void Caballo::ensuciar()
         Animal::ensuciar();
     }
 }
-
 
 void Caballo::gastar_energia()
 {

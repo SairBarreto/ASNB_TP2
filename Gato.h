@@ -12,10 +12,6 @@ class Gato : public Animal
 
     public:
         Gato(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
-
-        //PRE: -    
-        //POS: Carga y crea objeto Gato
-        void set_gato(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
         
         //PRE: -    
         //POS: Aumenta hambre dependiendo de su personalidad
