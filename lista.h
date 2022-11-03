@@ -18,7 +18,7 @@ private:
 public:
 
     //PRE: -
-    //POS: Constructor
+    //POS: Construye una lista con nodo actual nulo
     Lista();
 
     //PRE: Debe existir una lista y Dato debe ser valido

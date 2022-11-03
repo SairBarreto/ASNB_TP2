@@ -135,8 +135,10 @@ void animales_paso_del_tiempo(Lista<Animal>* lista_animales) {
 void adoptar_animal(Lista<Animal>* lista_animales){
     int metros_cuadrados = 0;
     string nombre_buscado; 
-    cout << "Ingrese cantidad de metros cuadrados disponibles: ";
-    cin >> metros_cuadrados;
+    while(metros_cuadrados < 0 || metros_cuadrados > 100){ 
+        cout << "Ingrese cantidad de metros cuadrados disponibles [0-100]: ";
+        cin >> metros_cuadrados;
+    }
 
     mostrar_animales_en_adopcion(lista_animales, metros_cuadrados);
    
@@ -157,7 +159,7 @@ void adoptar_animal(Lista<Animal>* lista_animales){
             lista_animales->pasar_nodo();
         }
         cout << "Felicidades usted adopto a " << nombre_buscado << endl;
-    }*/
+    }
     int i = 0;
 
     while(i < lista_animales->obtener_cantidad() && !existe_nombre){
@@ -182,8 +184,7 @@ void adoptar_animal(Lista<Animal>* lista_animales){
 }
 
 void mostrar_animales_en_adopcion(Lista<Animal>* lista_animales, int metros_cuadrados){    
-    
-    cout << endl;
+
     for(int i=0;i<lista_animales->obtener_cantidad(); i++){
         if(puede_vivir_en_espacio(lista_animales->obtener_actual_dato(), metros_cuadrados)){ 
         cout << "\t -" << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
