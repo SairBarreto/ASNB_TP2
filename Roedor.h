@@ -6,8 +6,7 @@
 
 class Roedor : public Animal
 {
-     private:
-        string personalidad;
+
     public:
         Roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);
         void set_roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad);

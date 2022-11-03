@@ -6,14 +6,15 @@ using namespace std;
 //nombre,edad,tama�o,especie,personalidad
 class Animal
 {
-    private:
+    protected:
         string nombre;
         int edad;
         string tamanio;
         string especie;
+        string personalidad;
 
     public:
-        Animal(string nombre, int edad, string tamanio, string especie);
+        Animal(string nombre, int edad, string tamanio, string especie,string personalidad);
         virtual void ensuciar();
         virtual void gastar_energia();//aumenta niveles de hambre
         void baniar();
@@ -23,8 +24,9 @@ class Animal
         int hambre;
         int higiene;
         string obtener_nombre();
-        int obtener_higiene();  
-        int obtener_hambre(); 
+        int obtener_higiene();
+        int obtener_hambre();
+        string obtener_personalidad();
         virtual ~Animal(){};
         //Para la opcion 4
         string obtener_tamanio();

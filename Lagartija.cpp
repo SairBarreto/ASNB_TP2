@@ -1,8 +1,8 @@
 #include "Lagartija.h"
 
-Lagartija::Lagartija(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad) : Animal(_nombre,_edad,_tamanio,_especie)
+Lagartija::Lagartija(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad) : Animal(_nombre,_edad,_tamanio,_especie,_personalidad)
 {
-    personalidad = _personalidad;
+
 }
 
 /*void Lagartija::set_roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)

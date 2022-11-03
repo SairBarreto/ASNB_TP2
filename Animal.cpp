@@ -3,12 +3,13 @@
 using namespace std;
 
 
-Animal::Animal(string nombre, int edad, string tamanio, string especie)
+Animal::Animal(string nombre, int edad, string tamanio, string especie,string personalidad)
 {
     this->nombre = nombre;
     this->edad = edad;
     this->tamanio = tamanio;
     this->especie = especie;
+    this->personalidad = personalidad;
     this->hambre = 0;
     this->higiene = 100;
 }
@@ -71,11 +72,9 @@ string Animal::obtener_especie() {
     return especie;
 }
 
-/*La personalidad cambia segun el animal, ademas no la personalidad no esta declarada en Animal.h po eso no lo toma 
 string Animal::obtener_personalidad() {
     return personalidad;
 }
-*/
 
 int Animal::obtener_higiene() {
     return higiene;

@@ -1,8 +1,8 @@
 #include "Roedor.h"
 
-Roedor::Roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad):Animal(_nombre,_edad,_tamanio,_especie)
+Roedor::Roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad):Animal(_nombre,_edad,_tamanio,_especie,_personalidad)
 {
-    personalidad = _personalidad;
+
 }
 
 /*void Roedor::set_roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)

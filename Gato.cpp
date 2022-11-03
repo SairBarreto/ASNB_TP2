@@ -2,9 +2,9 @@
 
 
 
-Gato::Gato(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad): Animal(_nombre,_edad,_tamanio,_especie)
+Gato::Gato(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad): Animal(_nombre,_edad,_tamanio,_especie,_personalidad)
 {
-    personalidad = _personalidad;
+
 }
 
 

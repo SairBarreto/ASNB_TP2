@@ -75,10 +75,12 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             //system("pause");
             break;
         case RESCATAR_ANIMAL:
-            system("pause");
+            rescatar_animales(lista_animales);
+            //system("pause");
             break;
         case BUSCAR_ANIMAL:
-            system("pause");
+            buscar_animales(lista_animales);
+            //system("pause");
             break;
         case CUIDAR_ANIMAL:
             opcion_4(lista_animales);
