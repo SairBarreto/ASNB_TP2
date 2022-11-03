@@ -33,6 +33,17 @@ enum especie_t {
     CANTIDAD_ESPECIES
 };
 
+const string ESPECIES_COMPLETAS[7] = {
+    "Caballo",
+    "Conejo",
+    "Erizo",
+    "Gato",
+    "Lagartija",
+    "Perro",
+    "Roedor"
+
+};
+
 const string ESPECIES_STR[7] = {
     "C",
     "O",

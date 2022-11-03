@@ -250,37 +250,33 @@ string elegir_especie()
 
 }
 
-string devolver_especie_palabra_completa(string inicial)
+
+
+string devolver_especie_palabra_completa(string inicial_ingresada)
 {
-    if(inicial=="E")
+    string inicial;
+    string palabra;
+    string especie_nombre_completo;
+
+    for(int i=0;i<7;i++)
     {
-        return "Erizo";
+        palabra = ESPECIES_COMPLETAS[i];
+        inicial = palabra[0];
+
+        if (inicial_ingresada == inicial && palabra!= "Conejo" )
+        {
+            especie_nombre_completo = palabra;
+        }
+        else if (inicial_ingresada == "O" && palabra=="Conejo")
+        {
+            especie_nombre_completo = palabra;
+        }
     }
-    else if(inicial=="G")
-    {
-        return "Gato";
-    }
-    else if(inicial=="L")
-    {
-        return "Lagartija";
-    }
-    else if(inicial=="P")
-    {
-        return "Perro";
-    }
-    else if(inicial=="R")
-    {
-        return "Roedor";
-    }
-    else if(inicial=="C")
-    {
-        return "Caballo";
-    }
-    else if(inicial=="O")
-    {
-        return "Conejo";
-    }
+
+    return especie_nombre_completo;
+
 }
+
 
 string elegir_personalidad()
 {
