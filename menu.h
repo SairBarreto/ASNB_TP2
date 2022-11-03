@@ -1,6 +1,8 @@
 #ifndef MENU_H
 #define MENU_H 
 
+#include <iostream>
+using namespace std;
 #include "Lista.h"
 #include "Animal.h"
 
@@ -10,7 +12,7 @@ enum{
     BUSCAR_ANIMAL,
     CUIDAR_ANIMAL,
     ADOPTAR_ANIMAL,
-    SALIR
+    SALIR,
 };
 
 enum{
@@ -29,6 +31,14 @@ string elegir_nombre();
 void menu_validar_opcion(int &opcion);
 
 void procesar_opcion(int opcion, Lista<Animal>* lista_animales);
+
+void mostrar_menu_2();
+
+void mostrar_todos_los_animales();
+
+void menu_validar_opcion_2(int &opcion_2);
+
+void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales);
 //Para la opcion 4
 void opcion_4(Lista<Animal>* lista_animales);
 

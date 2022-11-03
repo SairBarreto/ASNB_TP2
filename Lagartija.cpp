@@ -1,8 +1,8 @@
 #include "Lagartija.h"
 
-Lagartija::Lagartija(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad) : Animal(_nombre,_edad,_tamanio,_especie)
+Lagartija::Lagartija(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad) : Animal(_nombre,_edad,_tamanio,_especie,_personalidad)
 {
-    personalidad = _personalidad;
+
 }
 
 /*void Lagartija::set_roedor(string _nombre, int _edad, string _tamanio, string _especie, string _personalidad)
@@ -12,13 +12,22 @@ Lagartija::Lagartija(string _nombre, int _edad, string _tamanio, string _especie
 
 void Lagartija::gastar_energia()
 {
+    int nuevo_hambre;
     if (personalidad == "Dormilon")
     {
-        hambre = hambre + 5;
+        nuevo_hambre = hambre + 5;
+        if(nuevo_hambre >= 100)
+            hambre = 100;
+        else
+            hambre = nuevo_hambre;
     }
     else if (personalidad == "Jugueton")
     {
-        hambre = hambre + 20;
+        nuevo_hambre = hambre + 20;
+        if(nuevo_hambre >= 100)
+            hambre = 100;
+        else
+            hambre = nuevo_hambre;
     }
     else
     {
@@ -27,3 +36,4 @@ void Lagartija::gastar_energia()
 }
 
 
+void Lagartija::ensuciar() {}
