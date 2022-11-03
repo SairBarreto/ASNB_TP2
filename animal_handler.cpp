@@ -330,7 +330,7 @@ void guardar_y_salir(Lista<Animal>* lista_animales){
     ofstream archivo(PATH_ANIMALES,ios::out);
 
     for(int i = 0; i < lista_animales->obtener_cantidad(); i++){
-        archivo << lista_animales->obtener_actual_dato()->obtener_nombre() << delimitador << lista_animales->obtener_actual_dato()->obtener_edad() << delimitador << lista_animales->obtener_actual_dato()->obtener_tamanio() << delimitador << lista_animales->obtener_actual_dato()->obtener_especie() << delimitador /* << lista_animales->obtener_actual_dato()->obtener_personalidad()*/ << endl;
+        archivo << lista_animales->obtener_actual_dato()->obtener_nombre() << delimitador << lista_animales->obtener_actual_dato()->obtener_edad() << delimitador << lista_animales->obtener_actual_dato()->obtener_tamanio() << delimitador << lista_animales->obtener_actual_dato()->obtener_especie() << delimitador << lista_animales->obtener_actual_dato()->obtener_personalidad() << endl;
         lista_animales->pasar_nodo();
     }
 
