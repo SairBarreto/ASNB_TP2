@@ -1,26 +1,9 @@
 #include <iostream>
 #include "menu.h"
-#include "animal_handler.h" //Agregue esto para probar la primera opcion
+#include "animal_handler.h" 
 
 using namespace std;
 
-/* Esto ya esta en el menu.h no es necesario declararlo de nuevo
-enum{
-    LISTAR_ANIMALES = 1,
-    RESCATAR_ANIMAL,
-    BUSCAR_ANIMAL,
-    CUIDAR_ANIMAL,
-    ADOPTAR_ANIMAL,
-    GUARDAR_SALIR
-};
-
-enum{
-    ELEGIR_INDIVIDUALMENTE = 1,
-    ALIMENTAR_TODOS,
-    BANIO_TODOS,
-    REGRESAR_INICIO
-};
-*/
 void mostrar_menu()
 {
     cout << endl;
@@ -48,7 +31,7 @@ string elegir_nombre()
     string nombre;
     cout << "Ingrese el nombre del animal: ";
     fflush(stdin);
-    getline(cin, nombre);
+    getline(cin >> ws, nombre);
 
     return nombre;
 }
@@ -103,7 +86,7 @@ void opcion_4(Lista<Animal>* lista_animales)
 
     while(opcion_2 != REGRESAR_INICIO){
         procesar_opcion_2(opcion_2, lista_animales);
-        system("cls");
+        //system("cls");
         mostrar_menu_2();
         opcion_2 = menu_pedir_opcion();
         menu_validar_opcion_2(opcion_2);
@@ -139,15 +122,15 @@ void procesar_opcion_2(int opcion_2, Lista<Animal>* lista_animales)
     switch(opcion_2){
         case ELEGIR_INDIVIDUALMENTE:
             elegir_individualmente(lista_animales);
-            system("pause");
+            //system("pause");
             break;
         case ALIMENTAR_TODOS:
             alimentar_todos_animales(lista_animales);
-            system("pause");
+            //system("pause");
             break;
         case BANIO_TODOS:
             banio_todos(lista_animales);
-            system("pause");
+            //system("pause");
             break;
         case REGRESAR_INICIO:
             break;
@@ -180,11 +163,11 @@ void procesar_opcion_individual(int &opcion, Lista<Animal>* lista_animales)
     switch (opcion){
         case 1:
             banio_individual(lista_animales);
-            system("pause");
+            //system("pause");
             break;
         case 2:
             comida_individual(lista_animales);
-            system("pause");
+            //system("pause");
             break;
         case 3:
             break;

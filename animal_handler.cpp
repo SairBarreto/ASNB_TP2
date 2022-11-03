@@ -16,7 +16,7 @@ using namespace std;
 void leer_archivo(Lista<Animal>* lista_animales){
 
     string nombre, edad_str, tamanio_str, especie_str, personalidad_str;
-    char delimitador = ','; //El delimitador tiene que de tipo char con string no funciona
+    char delimitador = ','; //El delimitador tiene que ser de tipo char con string no funciona
     ifstream archivo(PATH_ANIMALES, ios::in);
 
     if(!archivo.is_open()){
@@ -97,70 +97,61 @@ void leer_archivo(Lista<Animal>* lista_animales){
 
 
     archivo.close();
-
 }
 
 void agregar_nodo_a_lista(Lista<Animal>* lista_animales, string nombre, string edad_str, string tamanio_str, string especie_str, string personalidad_str)
 {
-
     switch(string_a_especie_t(especie_str)) {
 
-                case CABALLO:
-                    {
-                    Caballo* caballo = new Caballo(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
-                    lista_animales->agregar_nodo(caballo);
-                    break;
-                    }
-
-                case CONEJO:
-                    {
-                    Conejo* conejo = new Conejo(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
-                    lista_animales->agregar_nodo(conejo);
-                    break;
-                    }
-
-                case ERIZO:
-                    {
-                    Erizo* erizo = new Erizo(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
-                    lista_animales->agregar_nodo(erizo);
-                    break;
-                    }
-
-                case GATO:
-                    {
-                    Gato* gato = new Gato(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
-                    lista_animales->agregar_nodo(gato);
-                    break;
-                    }
-
-                case LAGARTIJA:
-                    {
-                    Lagartija* lagartija = new Lagartija(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
-                    lista_animales->agregar_nodo(lagartija);
-                    break;
-                    }
-
-                case PERRO:
-                    {
-                    Perro* perro = new Perro(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
-                    lista_animales->agregar_nodo(perro);
-                    break;
-                    }
-
-                case ROEDOR:
-                    {
-                    Roedor* rata = new Roedor(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
-                    lista_animales->agregar_nodo(rata);
-                    break;
-                    }
-
-                default:
-                    break;
+        case CABALLO:
+            {
+            Caballo* caballo = new Caballo(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
+            lista_animales->agregar_nodo(caballo);
+            break;
             }
+        case CONEJO:
+            {
+            Conejo* conejo = new Conejo(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
+            lista_animales->agregar_nodo(conejo);
+            break;
+            }
+        case ERIZO:
+            {
+            Erizo* erizo = new Erizo(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
+            lista_animales->agregar_nodo(erizo);
+            break;
+            }
+        case GATO:
+            {
+            Gato* gato = new Gato(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
+            lista_animales->agregar_nodo(gato);
+            break;
+            }
+        case LAGARTIJA:
+            {
+            Lagartija* lagartija = new Lagartija(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
+            lista_animales->agregar_nodo(lagartija);
+            break;
+            }
+        case PERRO:
+            {
+            Perro* perro = new Perro(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
+            lista_animales->agregar_nodo(perro);
+            break;
+            }
+        case ROEDOR:
+            {
+            Roedor* rata = new Roedor(nombre, stoi(edad_str), tamanio_str, especie_str, personalidad_str);
+            lista_animales->agregar_nodo(rata);
+            break;
+            }
+        default:
+            break;
+    }
 }
 
-void listar_animales(Lista<Animal>* lista_animales) {
-
+void listar_animales(Lista<Animal>* lista_animales) 
+{
     string inicial_de_especie;
 
     //nombre, edad, tamaño, especie en forma completa , personalidad, hambre e higiene.
@@ -169,24 +160,23 @@ void listar_animales(Lista<Animal>* lista_animales) {
     cout<<"\n \t(nombre, edad, tamaño, especie en forma completa , personalidad, hambre,higiene)\n"<<endl;
 
     for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
-
+        
         inicial_de_especie = lista_animales->obtener_actual_dato()->obtener_especie();
 
-       cout<<"\t-"<<lista_animales->obtener_actual_dato()->obtener_nombre();
-       cout<<","<<lista_animales->obtener_actual_dato()->obtener_edad();
-       cout<<","<<lista_animales->obtener_actual_dato()->obtener_tamanio();
-       cout<<","<<devolver_especie_palabra_completa(inicial_de_especie);
-       cout<<","<<lista_animales->obtener_actual_dato()->obtener_personalidad();
-       cout<<","<<lista_animales->obtener_actual_dato()->get_hambre();
-       cout<<","<<lista_animales->obtener_actual_dato()->get_higiene()<<"\n"<<endl;
-
+        cout<<"\t-"<<lista_animales->obtener_actual_dato()->obtener_nombre();
+        cout<<","<<lista_animales->obtener_actual_dato()->obtener_edad();
+        cout<<","<<lista_animales->obtener_actual_dato()->obtener_tamanio();
+        cout<<","<<devolver_especie_palabra_completa(inicial_de_especie);
+        cout<<","<<lista_animales->obtener_actual_dato()->obtener_personalidad();
+        cout<<","<<lista_animales->obtener_actual_dato()->get_hambre();
+        cout<<","<<lista_animales->obtener_actual_dato()->get_higiene()<<"\n"<<endl;
 
         lista_animales->pasar_nodo();
     }
 
     lista_animales->iniciar_nodo_actual();
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool verificar_nombre(Lista<Animal>* lista_animales,string nombre_ingresado)
 {
     bool existe_nombre = false;
@@ -206,51 +196,46 @@ bool verificar_nombre(Lista<Animal>* lista_animales,string nombre_ingresado)
     return existe_nombre;
 }
 
-
 string elegir_especie()
 {
-    cout<<"\tESPECIE DEL ANIMAL"<<endl;
-    int opcion_elegida=0;
+    cout << "\tESPECIE DEL ANIMAL" << endl;
+    int opcion_elegida = 0;
 
-    cout<<"Seleccione la especie: "<<endl;
+    cout << "Seleccione la especie: " <<endl;
 
-        cout<<"1. Caballo"<<endl;
-        cout<<"2. Conejo"<<endl;
-        cout<<"3. Erizo"<<endl;
-        cout<<"4. Gato"<<endl;
-        cout<<"5. Lagartija"<<endl;
-        cout<<"6. Perro"<<endl;
-        cout<<"7. Roedor"<<endl;
+    cout << "\t1. Caballo" << endl;
+    cout << "\t2. Conejo" << endl;
+    cout << "\t3. Erizo" << endl;
+    cout << "\t4. Gato" << endl;
+    cout << "\t5. Lagartija" << endl;
+    cout << "\t6. Perro" << endl;
+    cout << "\t7. Roedor" << endl;
 
-        cout<<"Ingrese el numero de la opcion elegida: "<<endl;
-        cin>>opcion_elegida;
-
-
-    while(opcion_elegida>7 || opcion_elegida<1 )
-    {
+    cout << "Ingrese el numero de la opcion elegida: " << endl;
+    cin >> opcion_elegida;
+    
+    cout << endl << "---------------------------------------------------------" << endl << endl;
 
 
-        cout<<"la opcion ingresada no es correcta, intente nuevamente"<<endl;
+    while(opcion_elegida > 7 || opcion_elegida < 1 ){
 
-        cout<<"1. Caballo"<<endl;
-        cout<<"2. Conejo"<<endl;
-        cout<<"3. Erizo"<<endl;
-        cout<<"4. Gato"<<endl;
-        cout<<"5. Lagartija"<<endl;
-        cout<<"6. Perro"<<endl;
-        cout<<"7. Roedor"<<endl;
+        cout << "La opcion ingresada no es correcta, intente nuevamente" <<endl;
 
-        cout<<"Ingrese el numero de la opcion elegida: "<<endl;
-        cin>>opcion_elegida;
+        cout << "\t1. Caballo" << endl;
+        cout << "\t2. Conejo" << endl;
+        cout << "\t3. Erizo" << endl;
+        cout << "\t4. Gato" << endl;
+        cout << "\t5. Lagartija" << endl;
+        cout << "\t6. Perro" << endl;
+        cout << "\t7. Roedor" << endl;
 
+        cout << "Ingrese el numero de la opcion elegida: " << endl;
+        cin >> opcion_elegida;
     }
 
     opcion_elegida = opcion_elegida - 1;
     return ESPECIES_STR[opcion_elegida];
-
 }
-
-
 
 string devolver_especie_palabra_completa(string inicial_ingresada)
 {
@@ -258,135 +243,112 @@ string devolver_especie_palabra_completa(string inicial_ingresada)
     string palabra;
     string especie_nombre_completo;
 
-    for(int i=0;i<7;i++)
-    {
+    for(int i = 0; i < 7; i++){
         palabra = ESPECIES_COMPLETAS[i];
         inicial = palabra[0];
 
-        if (inicial_ingresada == inicial && palabra!= "Conejo" )
+        if (inicial_ingresada == inicial && palabra != "Conejo" )
         {
             especie_nombre_completo = palabra;
         }
-        else if (inicial_ingresada == "O" && palabra=="Conejo")
+        else if (inicial_ingresada == "O" && palabra =="Conejo")
         {
             especie_nombre_completo = palabra;
         }
     }
 
     return especie_nombre_completo;
-
 }
-
 
 string elegir_personalidad()
 {
-    cout<<"\tPERSONALIDAD DEL ANIMAL"<<endl;
-    int opcion_elegida=0;
+    cout << "\tPERSONALIDAD DEL ANIMAL" << endl;
+    int opcion_elegida = 0;
 
-    for(int i=0;i<4;i++)
-        {
-            cout<<i+1<<". "<<PERSONALIDADES[i]<<endl;
-        }
-    cout<<"Seleccione la personalidad: "<<endl;
-    cin>>opcion_elegida;
-    while(opcion_elegida>4 || opcion_elegida<1 )
-    {
-        cout<<"La opcion ingresada no es correcta. Intentelo nuevamente."<<endl;
+    for(int i = 0; i < 4 ; i++){
+        cout << i+1 << ". " << PERSONALIDADES[i] << endl;
+    }
+    cout << "Seleccione la personalidad: " << endl;
+    cin >> opcion_elegida;
 
-        for(int i=0;i<4;i++)
-        {
+    while(opcion_elegida > 4 || opcion_elegida < 1){
+        cout << "La opcion ingresada no es correcta. Intentelo nuevamente." << endl;
+
+        for(int i = 0; i < 4; i++){
             cout<<i+1<<". "<<PERSONALIDADES[i]<<endl;
         }
 
         cout<<"Seleccione la personalidad: "<<endl;
         cin>>opcion_elegida;
-
     }
 
     opcion_elegida = opcion_elegida - 1;
-
     return PERSONALIDADES[opcion_elegida];
 }
 
 string elegir_tamanio()
 {
-    cout<<"\tTAMAÑO DEL ANIMAL"<<endl;
-    int opcion_elegida=0;
+    cout << "\tTAMAÑO DEL ANIMAL" << endl;
+    int opcion_elegida = 0;
 
-    for(int i=0;i<5;i++)
-        {
-            cout<<i+1<<". "<<TAMANIOS_STR[i]<<endl;
-        }
-    cout<<"Seleccione el tamaño: "<<endl;
-    cin>>opcion_elegida;
-    while(opcion_elegida>5 || opcion_elegida<1 )
-    {
+    for(int i = 0; i < 5; i++){
+        cout << i+1 << ". " << TAMANIOS_STR[i] << endl;
+    }
+
+    cout << "Seleccione el tamaño: " << endl;
+    cin >> opcion_elegida;
+    
+    while(opcion_elegida > 5 || opcion_elegida < 1 ){
         cout<<"La opcion ingresada no es correcta. Intentelo nuevamente"<<endl;
 
-        for(int i=0;i<4;i++)
-        {
-            cout<<i+1<<". "<<TAMANIOS_STR[i]<<endl;
+        for(int i = 0; i < 4; i++){
+            cout << i+1 << ". " << TAMANIOS_STR[i] << endl;
         }
 
-        cout<<"Seleccione el tamaño: "<<endl;
-        cin>>opcion_elegida;
-
+        cout << "Seleccione el tamaño: " << endl;
+        cin >> opcion_elegida;
     }
 
     opcion_elegida = opcion_elegida - 1;
-
     return TAMANIOS_STR[opcion_elegida];
 }
 
 string ingresar_edad()
 {
-    cout<<"\tEDAD DEL ANIMAL"<<endl;
-
-
+    cout << "\tEDAD DEL ANIMAL" << endl;
     string edad_str;
 
-    cout<<"Ingrese la edad del animal: ";
-    getline(cin,edad_str);
+    cout << "Ingrese la edad del animal: ";
+    getline(cin >> ws,edad_str);
 
-    while(stoi(edad_str)<EDAD_MIN || stoi(edad_str)>EDAD_MAX)
-    {
-        cout<<"La edad ingresada no es correcta. Intentelo nuevamente."<<endl;
-        cout<<"Ingrese la edad del animal: ";
-        cin>>edad_str;
+    while(stoi(edad_str) < EDAD_MIN || stoi(edad_str) > EDAD_MAX){
+        cout << "La edad ingresada no es correcta. Intentelo nuevamente." << endl;
+        cout << "Ingrese la edad del animal: ";
+        cin >> edad_str;
     }
-
 
     return edad_str;
 }
-
 
 void rescatar_animales(Lista<Animal>* lista_animales)
 {
 
     string nombre_animal;
-
     string edad;
-
     string tamanio;
-
     string especie;
-
     string personalidad;
 
-
-
     cin.ignore();
-    int opcion =0;
+    int opcion = 0;
     bool salir = true;
 
-    cout<<"Ingrese el nombre del animal que desea rescatar: ";
-    getline(cin,nombre_animal);
-
-
+    cout << "Ingrese el nombre del animal que desea rescatar: ";
+    nombre_animal = elegir_nombre();
+    //getline(cin,nombre_animal);
 
     while(salir){
-         if(verificar_nombre(lista_animales,nombre_animal)== false)
-        {
+        if(verificar_nombre(lista_animales,nombre_animal) == false){
             edad = ingresar_edad();
 
             tamanio = elegir_tamanio();
@@ -397,49 +359,41 @@ void rescatar_animales(Lista<Animal>* lista_animales)
 
             agregar_nodo_a_lista(lista_animales,nombre_animal,edad,tamanio,especie,personalidad);
 
+            cout << endl << "---------------------------------------------------------" << endl << endl;
             salir = false;
-
         }
-        else
-        {
-            cout<<"El nombre ingresado ya existe"<<endl;
-            cout<<"Si desea salir ingrese [1], \nsi desea ingresar el nombre de otro animal ingrese [2]"<<endl;
-            cout<<"Ingrese una opcion: ";
-            cin>>opcion;
+        else{
+            cout << "El nombre ingresado ya existe" << endl;
+            cout << "Si desea salir ingrese [1], \nsi desea ingresar el nombre de otro animal ingrese [2]" << endl;
+            cout << "Ingrese una opcion: ";
+            cin >> opcion;
 
             if(opcion == 1){
                 salir = false;
             }
             else{
-                    cin.ignore();
-                    cout<<"Ingrese el nombre del animal que desea rescatar: ";
-                    getline(cin,nombre_animal);
+                cin.ignore();
+                cout << "Ingrese el nombre del animal que desea rescatar: ";
+                getline(cin,nombre_animal);
             }
         }
     }
-
-
 }
-
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void buscar_animales(Lista<Animal>* lista_animales)
 {
     string nombre_ingresado;
-
     string inicial_especie;
 
     cin.ignore();
-    //getline(cin,titulo_nuevo_libro);
-    cout<<"Ingrese el nombre del animal que desea buscar: ";
-    getline(cin, nombre_ingresado);
+    cout << "Ingrese el nombre del animal que desea buscar: ";
+    nombre_ingresado = elegir_nombre();
+    //getline(cin >> ws, nombre_ingresado);
 
-    if(verificar_nombre(lista_animales,nombre_ingresado))
-    {
-        for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
+    if(verificar_nombre(lista_animales,nombre_ingresado)){
+        for(int i = 0; i < lista_animales->obtener_cantidad(); i++){
 
-        if(lista_animales->obtener_actual_dato()->obtener_nombre() == nombre_ingresado)
-        {
+        if(lista_animales->obtener_actual_dato()->obtener_nombre() == nombre_ingresado){
             inicial_especie =  lista_animales->obtener_actual_dato()->obtener_especie();
 
             cout << "\t Nombre: " << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
@@ -453,22 +407,14 @@ void buscar_animales(Lista<Animal>* lista_animales)
     }
 
     lista_animales->iniciar_nodo_actual();
-
-
     }
-    else
-    {
-        cout<<"ERROR: El nombre ingresado no existe "<<endl;
+    else{
+        cout << "ERROR: El nombre ingresado no existe " << endl;
     }
 
 
 }
-//fin anto
-
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 especie_t string_a_especie_t(string especie) {
     int posicion;
     for(int i = 0; i < CANTIDAD_ESPECIES; i++){
@@ -486,7 +432,7 @@ void animales_paso_del_tiempo(Lista<Animal>* lista_animales) {
     }
     lista_animales->iniciar_nodo_actual();
 }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void adoptar_animal(Lista<Animal>* lista_animales){
     int metros_cuadrados = 0;
     string nombre_buscado;
@@ -496,24 +442,9 @@ void adoptar_animal(Lista<Animal>* lista_animales){
     mostrar_animales_en_adopcion(lista_animales, metros_cuadrados);
 
     cout << "¿Cual desea adoptar? Ingrese su nombre: ";
-    nombre_buscado = elegir_nombre();
-    //fflush(stdin);
-    //getline(cin >> ws, nombre_buscado);
-    //cin >> nombre_buscado;
+    getline(cin >> ws, nombre_buscado);
+    
     bool existe_nombre = false;
-    //cout << lista_animales->obtener_actual_dato()->obtener_nombre() << endl;
-    //existe_nombre = verificar_animal_a_adoptar(lista_animales, nombre_buscado);
-    /*if(!existe_nombre){
-        cout << "No existe animal con ese nombre en la lista. Vuelva a intentarlo." << endl;
-    }
-    else{
-        for(int i = 0; i < lista_animales->obtener_cantidad(); i++) {
-            if(nombre_buscado == lista_animales->obtener_actual_dato()->obtener_nombre())
-                lista_animales->borrar_nodo_actual();
-            lista_animales->pasar_nodo();
-        }
-        cout << "Felicidades usted adopto a " << nombre_buscado << endl;
-    }*/
     int i = 0;
 
     while(i < lista_animales->obtener_cantidad() && !existe_nombre){
@@ -559,7 +490,7 @@ bool puede_vivir_en_espacio(Animal* animal, int metros_cuadrados) {
 
 int string_a_tamanio(string tamanio) {
     int espacio_minimo = 100;
-    //cout << endl;
+    
     for(int i = 0; i < CANTIDAD_TAMANIOS; i++){
         //cout << tamanio << " " << TAMANIOS[i].tamanio << endl;
         if(tamanio == TAMANIOS[i].tamanio)
@@ -567,7 +498,7 @@ int string_a_tamanio(string tamanio) {
     }
     return espacio_minimo;
 }
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Cosas para el Manu 2
 //Funciona
 void alimentar_todos_animales(Lista<Animal>* lista_animales)
