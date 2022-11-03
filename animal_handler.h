@@ -56,20 +56,20 @@ const string ESPECIES_STR[7] = {
 
 const string PERSONALIDADES[4] =
 {
-    "Dormilon",
-    "Jugueton",
-    "Sociable",
-    "Travieso"
+    "dormilon",
+    "jugueton",
+    "sociable",
+    "travieso"
 
 };
 
 const string TAMANIOS_STR[5] =
 {
-    "Diminuto",
-    "Peque�o",
-    "Mediano",
-    "Grande",
-    "Gigante"
+    "diminuto",
+    "pequenio",
+    "mediano",
+    "grande",
+    "gigante"
 };
 
 const int EDAD_MAX = 100;

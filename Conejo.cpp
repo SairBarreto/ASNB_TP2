@@ -33,7 +33,7 @@ void Conejo::gastar_energia()
 void Conejo::ensuciar()
 {
     int nuevo_higiene;
-    if (personalidad=="Sociable")
+    if (personalidad=="sociable")
     {
         nuevo_higiene = higiene - 5;
         if(nuevo_higiene <= 0)
@@ -41,9 +41,9 @@ void Conejo::ensuciar()
         else
             higiene = nuevo_higiene;
     }
-    else if (personalidad == "Travieso")
+    else if (personalidad == "travieso")
     {
-        nuevo_higiene = higiene + 20;
+        nuevo_higiene = higiene - 20;
         if(nuevo_higiene <= 0)
             higiene = 0;
         else

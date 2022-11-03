@@ -74,7 +74,6 @@ void procesar_opcion(int opcion, Lista<Animal>* lista_animales)
             break;
         case SALIR:
             guardar_y_salir(lista_animales);
-            animales_paso_del_tiempo(lista_animales);
             break;
     }
 }

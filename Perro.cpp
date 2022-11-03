@@ -8,7 +8,7 @@ Perro:: Perro(string _nombre, int _edad, string _tamanio, string _especie, strin
 void Perro::ensuciar()
 {
     int nuevo_higiene;
-    if (personalidad=="Sociable")
+    if (personalidad=="sociable")
     {
         nuevo_higiene = higiene - 5;
         if(nuevo_higiene <= 0)
@@ -16,9 +16,9 @@ void Perro::ensuciar()
         else
             higiene = nuevo_higiene;
     }
-    else if (personalidad == "Travieso")
+    else if (personalidad == "travieso")
     {
-        nuevo_higiene = higiene + 20;
+        nuevo_higiene = higiene - 20;
         if(nuevo_higiene <= 0)
             higiene = 0;
         else
@@ -33,7 +33,7 @@ void Perro::ensuciar()
 void Perro ::gastar_energia()
 {
     int nuevo_hambre;
-    if (personalidad == "Dormilon")
+    if (personalidad == "dormilon")
     {
         nuevo_hambre = hambre + 5;
         if(nuevo_hambre >= 100)
@@ -41,7 +41,7 @@ void Perro ::gastar_energia()
         else
             hambre = nuevo_hambre;
     }
-    else if (personalidad == "Jugueton")
+    else if (personalidad == "jugueton")
     {
         nuevo_hambre = hambre + 20;
         if(nuevo_hambre >= 100)

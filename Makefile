@@ -2,17 +2,12 @@ PROGRAM=tp2
 CC=g++
 CFLAGS=-Wall -Werror -Wconversion
 DEBUG=-g
-$(PROGRAM): main.o nodo.o lista.o Animal.o Conejo.o Caballo.o Erizo.o Gato.o Lagartija.o Perro.o Roedor.o animal_handler.o menu.o
-	$(CC) $(CFLAGS) $(DEBUG) main.o lista.o nodo.o Animal.o Conejo.o Caballo.o Erizo.o Gato.o Lagartija.o Perro.o Roedor.o animal_handler.o menu.o -o $(PROGRAM)
+$(PROGRAM): main.o Animal.o Conejo.o Caballo.o Erizo.o Gato.o Lagartija.o Perro.o Roedor.o animal_handler.o menu.o
+	$(CC) $(CFLAGS) $(DEBUG) main.o Animal.o Conejo.o Caballo.o Erizo.o Gato.o Lagartija.o Perro.o Roedor.o animal_handler.o menu.o -o $(PROGRAM)
 
 main.o: main.cpp Nodo.h Lista.h
 	$(CC) $(CFLAGS) $(DEBUG) -c main.cpp
 
-lista.o: lista.cpp Lista.h Nodo.h
-	$(CC) $(CFLAGS) $(DEBUG) -c lista.cpp
-
-nodo.o: nodo.cpp Nodo.h
-	$(CC) $(CFLAGS) $(DEBUG) -c nodo.cpp
 
 Animal.o: Animal.cpp Animal.h
 	$(CC) $(CFLAGS) $(DEBUG) -c Animal.cpp

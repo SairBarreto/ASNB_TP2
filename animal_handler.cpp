@@ -347,7 +347,7 @@ void rescatar_animales(Lista<Animal>* lista_animales)
     int opcion = 0;
     bool salir = true;
 
-    cout << "Ingrese el nombre del animal que desea rescatar: ";
+    //cout << "Ingrese el nombre del animal que desea rescatar: ";
     nombre_animal = elegir_nombre();
 
     while(salir){

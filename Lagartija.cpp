@@ -8,7 +8,7 @@ Lagartija::Lagartija(string _nombre, int _edad, string _tamanio, string _especie
 void Lagartija::gastar_energia()
 {
     int nuevo_hambre;
-    if (personalidad == "Dormilon")
+    if (personalidad == "dormilon")
     {
         nuevo_hambre = hambre + 5;
         if(nuevo_hambre >= 100)
@@ -16,7 +16,7 @@ void Lagartija::gastar_energia()
         else
             hambre = nuevo_hambre;
     }
-    else if (personalidad == "Jugueton")
+    else if (personalidad == "jugueton")
     {
         nuevo_hambre = hambre + 20;
         if(nuevo_hambre >= 100)
