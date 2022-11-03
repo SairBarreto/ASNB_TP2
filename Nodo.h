@@ -21,28 +21,28 @@ public:
     //POS: Crea un nodo con dato = d y siguiente = 0; 
     Nodo(Dato* dato);
 
-    //PRE: -
-    //POS:
+    //PRE: Nodo existente con Dato 
+    //POS: Nodo siguiente cambia de puntero
     void cambiar_siguiente_nodo(Nodo<Dato>* ptr);
 
     //PRE: -
-    //POS:
+    //POS: Retorna Dato contenido en el Nodo
     Dato* obtener_dato();
 
     //PRE: -
-    //POS:
+    //POS: Retorna el siguiente Nodo al actual
     Nodo* obtener_siguiente_nodo();
 
-    //PRE: -
-    //POS:
+    //PRE: nuevo_dato debe ser valido
+    //POS: Remplaza Dato con un nuevo_dato
     void cambiar_nuevo_dato(Dato nuevo_dato);
 
     //PRE: -
-    //POS:
+    //POS: Devuelve si es o no es nulo el proximo nodo al actual
     bool es_no_nulo_proximo_nulo();
 
     //PRE: -
-    //POS:
+    //POS: Destructor
     ~Nodo();
 
 };

@@ -14,26 +14,68 @@ class Animal
         string personalidad;
 
     public:
-        Animal(string nombre, int edad, string tamanio, string especie,string personalidad);
-        virtual void ensuciar();
-        virtual void gastar_energia();//aumenta niveles de hambre
-        void baniar();
-        void alimentar();
-        int get_higiene();
-        int get_hambre();
         int hambre;
         int higiene;
+        
+        //PRE: -    
+        //POS: Carga y crea objeto Animal
+        Animal(string nombre, int edad, string tamanio, string especie,string personalidad);
+
+        //PRE: -
+        //POS: Disminuye en -10 la higiene, si ya esta menor de 0 la deja en 0
+        virtual void ensuciar();
+
+        //PRE: -    
+        //POS: Aumenta el hambre en +10, si ya tiene mas hambre que 100 la deja en 100
+        virtual void gastar_energia();//aumenta niveles de hambre
+        
+        //PRE: -    
+        //POS: Higiene al 100
+        void baniar();
+
+        //PRE: -    
+        //POS: Hambre al 0
+        void alimentar();
+
+        //PRE: -    
+        //POS: Retorna el valor de higiene
+        int get_higiene();
+
+        //PRE: -    
+        //POS: Retorna el valor de hambre
+        int get_hambre();
+
+        //PRE: -    
+        //POS: Retorna el nombre del animal
         string obtener_nombre();
-        int obtener_higiene();
-        int obtener_hambre();
-        string obtener_personalidad();
+
+        //PRE: -    
+        //POS: Retorna la higiene del animal
+        int obtener_higiene();  
+
+        //PRE: -    
+        //POS: Retorna el hambre del animal
+        int obtener_hambre(); 
+
+        //PRE: -    
+        //POS: Destructor
         virtual ~Animal(){};
-        //Para la opcion 4
+
+        //PRE: -    
+        //POS: Retorna tamanio de animal
         string obtener_tamanio();
+
+        //PRE: -    
+        //POS: Retorna edad del animal
         int obtener_edad();
+
+        //PRE: -    
+        //POS: Retorna especie del animal
         string obtener_especie();
 
-
+        //PRE: -    
+        //POS: Retorna personalidad del animal
+        string obtener_personalidad();
 };
 
 #endif // ANIMAL_H
